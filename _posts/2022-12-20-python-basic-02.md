@@ -1,6 +1,6 @@
 ---
-title: '[Python 기초] 02. 테이터타입'
-date: 22-12-20 21:12:10 +0800
+title: '[Python 기초] 02. 인공지능 이해'
+date: 22-12-20 20:11:11 +0800
 categories: ['Python', 'Python 기초']
 tags: [python]     # TAG names should always be lowercase
 ---
@@ -911,7 +911,7 @@ len(address)
         - -1 에서 1씩 감소하는 값을 붙여준다.
         - **뒤에서 몇번째 글자 식**으로 조회할 때 사용한다.
     - 모든 문자는 양수/음수 index 두개를 가진다.
-    ![index](/images/ch02_01.png)
+    ![index](images/ch02_01.png)
 
 #### Indexing
 - 문자열\[index\]
