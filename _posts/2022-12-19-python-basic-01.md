@@ -36,7 +36,7 @@ tags: [python]     # TAG names should always be lowercase
     - 컴퓨터는 사람의 언어를 이해하거나 저장하지 못한다. 0과 1(on/off)의 **2진 데이터(binary code)의 기계어**를 사용한다.
     - Low Level Language
     - 기계어로 변환된 코드를 **Binary Code**라고 한다.
-    ![기계어](images/ch01_01.png)
+    ![기계어](/images/ch01_01.png)
 
 ### Compile(번역)과 Interprete(통역)
 - 사람이 이해하는 High Level Language 로 작성한 프로그램 코드를 실행할 때는 기계가 이해하는 언어인 기계어(Binary code)로 변환해야 한다.  
@@ -58,11 +58,11 @@ tags: [python]     # TAG names should always be lowercase
     - **단점**
         - 실행하는 도중 기계어로 변환하기 때문에 **속도가 느리다**
     - **파이썬은 Interpreted 방식의 언어이다.**       
-    ![실행방식](images/ch01_02.png)
+    ![실행방식](/images/ch01_02.png)
 
 # Python(파이썬) 
-![python 로고](images/ch01_python_logo.png)
-![귀도반로섬](images/ch01_03.png)
+![python 로고](/images/ch01_python_logo.png)
+![귀도반로섬](/images/ch01_03.png)
 
 - 1991년 네덜란드 프로그래머 귀도 판 로섬(Guido van Rossum) 이 만든 프로그래밍 언어.
 - 평이한 영어로 이해할 수 있는 코드와, 일상적인 업무에 적용할 수 있고 프로그램 개발시 긴 시간을 필요로 하지 않는 언어를 목표로 개발함.
@@ -116,7 +116,7 @@ tags: [python]     # TAG names should always be lowercase
     - 파이썬은 필요한 라이브러리들을 pip 명령어를 이용해 PyPI에서 다운 받아 설치 하여 사용한다.
     - https://pypi.org/
         - 패키지 검색 사이트
- ![image-3.png](attachment:image-3.png)       
+    
 
 
 
