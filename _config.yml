@@ -14,14 +14,14 @@ lang: en
 
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone:
+timezone: Asia/Seoul
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 스누피의 코딩                           # the main title
+title: 스누피의 코딩 생활
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: 한 명분의 개발자가 될 수 있도록 노력하는 중입니다...
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
