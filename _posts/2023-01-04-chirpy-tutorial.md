@@ -34,7 +34,6 @@ Github Page를 만들기 위해 우선 [Github 사이트](https://github.com/)�
 
 5. repository 상단에 위치한 **Actions** 탭에 들어가셔서 **workflow**가 초록색 체크 표시가 뜰 때까지 기다려 줍니다.
 >![chirpy-tutorial_01_05](/images/githubpage/chirpy-tutorial_01_05.png)
-
 >![chirpy-tutorial_01_06](/images/githubpage/chirpy-tutorial_01_06.png)
 
 6. **workflow**에서 체크 표시가 뜨면 ① Github 상단에 위치한 **Settings**탭에 들어가신 후 ② Page 탭에 들어가 ③ **Source**를 **Github Actions**로 바꿉니다. 
