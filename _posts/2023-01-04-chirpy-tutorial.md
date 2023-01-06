@@ -1,6 +1,6 @@
 ---
 title: '[Chirpy] 5분만에 끝내는 Github Page 만들기'
-date: 22-12-19 20:11:11 +0800
+date: 23-01-04 20:11:11 +0800
 categories: ['Github', 'Github Page']
 tags: [github, blog, chirpy, jekyll, windows]     # TAG names should always be lowercase
 ---
