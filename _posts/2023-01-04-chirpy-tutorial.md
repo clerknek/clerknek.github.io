@@ -37,7 +37,6 @@ Github Page를 만들기 위해 우선 [Github 사이트](https://github.com/)�
 >![chirpy-tutorial_01_06](/images/githubpage/chirpy-tutorial_01_06.png)
 
 6. **workflow**에서 체크 표시가 뜨면 ① Github 상단에 위치한 **Settings**탭에 들어가신 후 ② Page 탭에 들어가 ③ **Source**를 **Github Actions**로 바꿉니다. 
-
 >![chirpy-tutorial_01_07](/images/githubpage/chirpy-tutorial_01_07.png)
 
 7. 6번을 다 끝내고 6번 사진의 ④ **Visit site** 버튼을 눌러주면 아래와 같이 chirpy 테마가 적용된 여러분의 Github Page를 확인하실 수 있습니다.
