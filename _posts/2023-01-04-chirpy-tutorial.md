@@ -13,6 +13,22 @@ tags: [github, blog, chirpy, jekyll, windows]     # TAG names should always be l
 > - Chirpy 튜토리얼
 > <https://chirpy.cotes.page/categories/tutorial/>
 
+## 왜 Github Page, Chirpy Starter인가?
+Github Page의 장단점은 다른 분 사이트로 가보면 다 있으니 넘어가도록 하고 제 개인적인 경험에 따라 이야기를 해보도록 하겠습니다. 제가 Github Page를 사용한 이유는 크게 3가지가 있었습니다. 
+>
+1. 자유롭게 블로그를 설정하고 싶다.
+2. Github에 좀 더 익숙해지고 싶다.
+3. Markdown 기반으로 블로그 글을 작성하고 싶다.
+>
+Github Page관련 테마를 찾아본 결과 가장 마음에 들었던 테마가 바로 Chirpy였습니다.
+그 후 테마를 적용하는 방법을 찾아봤는 데 다른 사이트들을 찾아보니 다들 Fork를 이용하거나 직접 repository를 다운받아서 설정을 하는 등 github 초보인 저에게는 좀 어려운 방법으로 진행되었습니다. 또한 그러한 방법에는 반드시 Ruby나 다른 설치 프로그램을 다운받아야 되서 반 쯤 포기한 상태일 때 해결책을 찾게 되었습니다:exclamation:
+그 방법은 다름이 아닌 제작자 분의 블로그에 나와 있었는데요. 블로그에 나와 있는 설치 방식 중 첫번째인 **Chirpy Starter**를 이용해 보니 github에 대해 잘 몰라도 5분만에 Page를 만들 수가 있었습니다. 이러한 경험을 바탕으로 저와 비슷한 처지이신 분들께 조금이나마 도움이 되도록 이번 글을 작성했습니다.
+
+### 3줄 정리
+1. Github Page라는 것을 알게 됨
+2. 테마를 설정하기 위해 Chirpy를 적용하려고 노력했으나 계속 실패함
+3. 제작자 분의 Github Page를 통해 Chirpy Starter를 사용해보니 엄청 쉽게 설치함
+
 ## 사전 준비
 Github Page를 만들기 위해 우선 [Github 사이트](https://github.com/)에 들어가셔서 회원가입을 하셔야 됩니다.
 가입 후 로그인이 끝났다면 Github Page를 만들 준비가 끝났습니다.
@@ -62,4 +78,6 @@ Github Page를 만들기 위해 우선 [Github 사이트](https://github.com/)�
 
 좀 더 자세한 내용은 위에 올려 두었던 제작자 분의 사이트에서 확인하실 수 있습니다. 
 Github Page를 사용해본지 얼마 안되서 간단하게 시작하는 것만 알려드렸습니다. 추후 시간이 나면 다음 포스팅에 사용법에 대해 좀 더 자세히 적어보도록 하겠습니다.
-
+- **결론**
+    - ~~역시 초보에게는 어렵게 설치하고 fork하는 것보다 간단한게 최고다 ㅎ~~
+    - 뭐든지 간에 제작자의 설명(Github readme 파일)부터 살펴보자
