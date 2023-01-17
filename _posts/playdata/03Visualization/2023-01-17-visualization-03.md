@@ -6,3 +6,4 @@ tags: [python, matplotlib, pandas]     # TAG names should always be lowercase
 ---
 
 ## 01. Pandas 시각화
+- 시각화 예제입니다
