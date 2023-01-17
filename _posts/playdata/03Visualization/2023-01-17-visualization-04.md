@@ -23,10 +23,36 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     ```
 
 ## rugplot, kdeplot, displot
-### rugplot
+### rugplot()
 - 각 데이터들의 위치를 보여준다.
 
 - 기본 구문
     ```python
-    sns.rugplot(자료구조)
+    sns.rugplot(tips['total_bill'])
     ```
+
+- x="컬럼명", data: DataFrame 형식
+    ```python
+    sns.rugplot(x='total_bill', data=tips)
+    ```
+
+### kdeplot()
+- KDE를 그려줌
+    - KDE(Kernel Density Estimation): 확률 밀도 추정
+- 구문 예제
+    ```python
+    sns.kdeplot(x='total_bill', data=tips)
+    ```
+
+### displot()
+- 히스토그램을 기준으로 rugplot, kdeplot을 같이 그릴 수 있다
+- 위 2개 보다 많이 씀
+
+- 구문 예제
+    ```python
+    sns.displot(x='total_bill', data=tips)
+    ```
+- 추가 설정
+    - `rug = True`: displot 위에 rugplot 보여주기
+    - `kde = True`: displot 위에 kdeplot 보여주기
+    - `hue = ''`: 원하는 그룹으로 나눠서 보여주기 (= groupby())
