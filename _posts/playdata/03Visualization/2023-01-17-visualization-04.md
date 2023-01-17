@@ -34,7 +34,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 
 - x="컬럼명", data: DataFrame 형식
     ```python
-    sns.rugplot(x='total_bill', data=tips)
+    sns.rugplot(data=tips, x='total_bill')
     ```
 
 ### kdeplot()
@@ -42,7 +42,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     - KDE(Kernel Density Estimation): 확률 밀도 추정
 - 구문 예제
     ```python
-    sns.kdeplot(x='total_bill', data=tips)
+    sns.kdeplot(data=tips, x='total_bill')
     ```
 
 ### displot()
@@ -51,7 +51,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 
 - 구문 예시
     ```python
-    sns.displot(x='total_bill', data=tips)
+    sns.displot(data=tips, x='total_bill')
     ```
 - 추가 설정
     - `rug = True`: displot 위에 rugplot 보여주기
@@ -65,7 +65,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 ### boxplot()
 - 구문 예시
 ```python
-sns.boxplot(x='total_bill', data=tips)
+sns.boxplot(data=tips, x='total_bill')
 ```  
 
 ### violinplot()
@@ -73,7 +73,7 @@ sns.boxplot(x='total_bill', data=tips)
 - 매개변수는 boxplot과 동일
 - 구문 예시
 ```python
-sns.violinplot(y='tip', data=tips)
+sns.violinplot(data=tips, y='tip')
 ```  
 
 ### swapplot()
@@ -83,8 +83,8 @@ sns.violinplot(y='tip', data=tips)
 - 단독으로는 잘 안쓰고 boxplot나 violin plot위에 그린다
 - 구문 예시
 ```python
-sns.boxplot(y = 'tip', data = tips, color='r')
-sns.swarmplot(y = 'tip', data = tips)
+sns.boxplot(data = tips, y = 'tip', color='r')
+sns.swarmplot(data = tips, y = 'tip')
 
 ```
 
@@ -93,10 +93,10 @@ sns.swarmplot(y = 'tip', data = tips)
 - 2. hue를 이용해 또 나눈다
 - 예시 코드
 ```python
-sns.boxplot(x = 'total_bill',
+sns.boxplot(data = tips,
+        x = 'total_bill',
         y = 'smoker',
-        hue = 'sex',
-        data = tips)
+        hue = 'sex')
 ```  
 
 ## 한개의 figure에 2개 이상의 그래프 그리기
@@ -107,8 +107,8 @@ fig = plt.figure(figsize=(15, 10))
 ax1 = fig.add_subplot(1, 2, 1)
 ax2 = fig.add_subplot(1, 2, 2)
 
-sns.boxplot(x='total_bill', data=tips, ax=ax1)
-sns.boxplot(y='tip', data=tips, ax=ax2)
+sns.boxplot(data=tips, x='total_bill', ax=ax1)
+sns.boxplot(data=tips, y='tip', ax=ax2)
 plt.show()
 ```
 
@@ -117,10 +117,10 @@ plt.show()
 ```python
 plt.figure(figsize=(15, 10))
 plt.subplot(1, 2, 1)
-sns.boxplot(x='total_bill', data=tips)
+sns.boxplot(data=tips, x='total_bill')
 
 plt.subplot(1, 2, 2)
-sns.boxplot(y='tip', data=tips)
+sns.boxplot(data=tips, y='tip')
 plt.show()
 ```
 
@@ -131,9 +131,97 @@ plt.show()
 
 - 구문 예시
 ```python
-sns.countplot(x='day', data=tips)
+sns.countplot(data=tips, x='day')
 ```
 
 - 추가 설정
     - `hue=''`: ~ 별로 나눠서 시각화
     - `dodge=False`: 수평누적막대 그래프
+
+
+## scatterplot, lmplot, jointplot, pairplot
+- 산점도를 그리는 함수
+### scatterplot()
+- pandas에서 scatter 했던 것과는 다르게 테두리가 흰색으로 표시가 됨
+- 구문 예시
+```python
+sns.scatterplot(data=tips, x='total_bill')
+```
+- 추가 설정
+    - `hue=''`: ~ 별로 나눠서 색깔을 표시
+        
+### lmplot()
+- 산점도 위에 선형 회귀 적합선(+ 오차 범위)을 그린다.
+- 구문 예시
+```python
+sns.lmplot(data=tips, x='total_bill', y='tip')
+```
+
+### jointplot()
+- 산점도 그래프 밖에 각 변수의 히스토그램을 그린다.
+- pandas DataFrame만 사용할 수 있다.
+- 구문 예시
+```python
+sns.jointplot(data=tips, x='total_bill', y = 'tip')
+```
+
+### pairplot()
+- 다변수(다차원) 데이터들 간의 산점도를 보여준다.
+- 모든 column 간의 데이터 분포를 보여준다.
+    - 수치형 데이터들만 그린다.
+    - 데이터프레임을 인수로 받아 그리드(grid) 형태로 각 변수간의 산점도를 그린다. 
+    - 같은 변수가 만나는 대각선 영역에는 해당 데이터의 히스토그램을 그린다.
+- 구문 예시
+```python
+sns.pairplot(tips)
+```
+
+## heatmap()
+- 값들에 비례해서 색을 다르게 해 2차원 자료로 시각화
+- 오른쪽에 보면 어떤 색이 관계가 높은지 알려준다.
+- 구문 예시
+```python
+sns.heatmap(tips.corr(numeric_only=True)) # 수치형 값만 들어가야 되기 때무넹 numeric_only=True를 추가한다.
+```
+- 추가 설정
+    - `cmap=''`: heatmap의 palette 변경
+    - `annot=True`: 값을 표시
+    - `fmt=''`: 표시된 값 소숫점 자리 설정
+
+
+## lineplot()
+- 선그래프
+- 시간의 흐름에 따른 값의 변화를 보여주는데 유용하다. (시계열 데이터)
+- pandas의 dataframe과는 다르게 x(index) 값을 따로 설정해야 한다.  
+
+- 장점: hue를 이용해서 범주 값으로 나눠서 그래프를 만들기 쉽다.
+- 단점: 일괄적으로 그래프를 그리고 싶을 때는 각 그래프 별로 적어야 해서 불편하다.
+
+- 구문 예시
+```python
+sns.lineplot(data=df, y='no1', x=df.index)
+```
+
+## Palette(그래프 색깔)
+- 값이 추가 될 때 그래프의 색이 바뀌는데 정해져 있는 색 순서를 의미한다.
+- 현재 palette 확인 방법
+```python
+import seaborn as sns
+sns.color_palette()
+```
+- Palette를 바꾸는 방법
+    - 1. 그래프만 바꾸는 방법
+        - 추가 설정에 `palette=''`를 넣는다
+        - 예시 코드
+        ```python
+        sns.scatterplot(data=tips, x='total_bill',palette='Set1') 
+        ```
+    - 2. 전체 그래프를 바꾸는 방법
+        - seaborn을 사용해 기본 팔레트를 변경할 수 있다.
+        - 예시 코드
+        ```python
+        sns.set_palette('Set1')
+        ```
+
+- Palette tutorial
+     <https://seaborn.pydata.org/tutorial/color_palettes.html#palette-tutorial>
