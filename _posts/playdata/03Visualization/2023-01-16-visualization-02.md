@@ -1,7 +1,7 @@
 ---
 title: '[Visualization] 02. matplotlib을 활용한 그래프 그리기'
 date: 23-01-16 09:29:00 +0800
-categories: ['PlayData', '03. Visualization']
+categories: ['Data Analysis', '03. Visualization']
 tags: [python, matplotlib]     # TAG names should always be lowercase
 ---
 
