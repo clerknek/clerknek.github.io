@@ -189,3 +189,8 @@ for x, y in zip(df.columns, df[y]):  # column 의 값이 int 일 경우 원래 i
     - IQR(Inter Quatile Range)-3분위수 - 1분위수, 중간 50$ 값의 범위
 - Boxplot를 사용하는 이유
     - 값들의 **분포**를 확인하기 위해서
+- `plt.boxplot(x)`
+    - x 인수
+        - x: 원하는 값의 리스트 형태
+- `labels=None`: 생성한 boxplot의 이름 붙이기
+- `whis=None`: 극단치 계산시 사용할 값(Default: 1.5)
