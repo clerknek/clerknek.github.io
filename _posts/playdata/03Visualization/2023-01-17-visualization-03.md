@@ -5,7 +5,7 @@ categories: ['Data Analysis', '03. Visualization']
 tags: [python, matplotlib, pandas]     # TAG names should always be lowercase
 ---
 
-## 01. Pandas 시각화
+## 1. Pandas 시각화
 - Pandas 자체적으로 matplotlib 를 기반으로 한 시각화기능을 지원한다. -> 그래프를 생성한 이후 설정할 때 matplotlib을 사용해도 된다.
 - Series나 DataFrame에 plot() 함수나 plot accessor를 사용한다.
     - accessor: 다른 타입에만 사용할 수 있는 메소드를 사용할 수 있도록 연결해주는 역할 
@@ -16,6 +16,8 @@ tags: [python, matplotlib, pandas]     # TAG names should always be lowercase
         - plot accessor
             - `(Series/DataFrame).plot.그래프함수()`
 - matplotlib에서 사용한 설정을 그대로 사용할 수 있다.
+- 장점: 그래프를 만들기 쉽다
+- 단점: 설정 자유도가 떨어진다.
 
 - <https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html>
 
@@ -47,7 +49,26 @@ s.plot.bar(title='과일 수량', xlabel='과일종류', ylabel='개수', figsiz
 plt.show()
 ```
 
-### Bar plot(막대 그래프)
+## 2. Line plot (선 그래프)
+
+- 기본구문
+    ```python
+    자료구조.plot()  # kind='line' (default)
+    ```
+
+## 3. Scatter plot (산점도)
+
+- 다른 그래프들과는 다르게 2개의 컬럼들(DataFrame)을 이용해서 그린다. (Series는 그릴 수 없다.)
+
+- 기본구문
+    ```python
+    자료구조(DF).plot(kind='scatter')
+    자료구조(DF).plot.scatter()
+    ```
+
+
+
+## 4. Bar plot(막대 그래프)
 - 기본구문
     ```python
     자료구조.plot(kind='bar')
@@ -59,7 +80,7 @@ plt.show()
     - `subplots=True`: 각 값들의 결과값을 따로 보여주는 설정
 
 
-### Pie chart(파이차트)
+## 5. Pie chart(파이차트)
 - 기본구문
     ```python
     자료구조.plot(kind='pie')
@@ -71,15 +92,15 @@ plt.show()
         - value: 비율계산
 
 
-### Histogram(히스토그램), KDE(밀도그래프)
-#### Histogram(히스토그램)
+## 6. Histogram(히스토그램), KDE(밀도그래프)
+### Histogram(히스토그램)
 - 기본구문
     ```python
     자료구조.plot(kind='hist')
     자료구조.plot.hist()
     ```
 
-#### KDE(밀도그래프)
+### KDE(밀도그래프)
 
 - 모듈 설치: `!pip install scipy`
 
@@ -89,7 +110,7 @@ plt.show()
     자료구조.plot.kde()
     ```
 
-### Boxplot (상자그래프)
+## 7. Boxplot (상자그래프)
 
 - 기본구문
     ```python
@@ -97,12 +118,4 @@ plt.show()
     자료구조.plot.box()
     ```
 
-### Scatter plot (산점도)
 
-- 다른 그래프들과는 다르게 2개의 컬럼들(DataFrame)을 이용해서 그린다. (Series는 그릴 수 없다.)
-
-- 기본구문
-    ```python
-    자료구조(DF).plot(kind='scatter')
-    자료구조(DF).plot.scatter()
-    ```
