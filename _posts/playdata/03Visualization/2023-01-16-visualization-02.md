@@ -162,7 +162,7 @@ for x, y in zip(df.columns, df[y]):  # column 의 값이 int 일 경우 원래 i
 - `autopct=None`: 조각내에 표시될 비율의 문자열 형식. '%fmt문자'
     - fmt문자: f(실수), d(정수), %% (%)
 - `pctdistance=0.5`: 표시한 문자열 위치 조정
-- `shadow=False`: 입체적으로 보일 수 있게 그림자가 생김
+- `shadow=True`: 입체적으로 보일 수 있게 그림자가 생김
 - `explode=None`: 내용을 분리하고 싶을 때 사용
     - 사용 예시
         `explode=[0, 0, 0.2, 0, 0]`
