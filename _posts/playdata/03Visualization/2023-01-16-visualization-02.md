@@ -1,7 +1,7 @@
 ---
 title: '[Visualization] 02. matplotlib을 활용한 그래프 그리기'
 date: 23-01-16 09:29:00 +0800
-categories: ['PlayData', '03 Visualization']
+categories: ['PlayData', '03. Visualization']
 tags: [python, matplotlib]     # TAG names should always be lowercase
 ---
 
@@ -183,3 +183,9 @@ for x, y in zip(df.columns, df[y]):  # column 의 값이 int 일 경우 원래 i
 
 ## 6. 상자그래프(Boxplot) 그리기
 - **연속형 값들의 사분위수, 극단값들을 이용해 값들의 분포를 나타낸 그래프**
+    - 1분위-아랫값, 2분위-중앙값, 3분위-윗값
+    - 선의 범위-정상 범위내의 최소값, 최대값
+    - 선 범위 밖의 값-정상 범위에서 벗어난 값
+    - IQR(Inter Quatile Range)-3분위수 - 1분위수, 중간 50$ 값의 범위
+- Boxplot를 사용하는 이유
+    - 값들의 **분포**를 확인하기 위해서
