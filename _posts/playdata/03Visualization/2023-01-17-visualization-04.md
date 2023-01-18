@@ -6,7 +6,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 ---
 
 
-## Seaborn
+## 0. Seaborn
 - matplotlib을 기반으로 다양한 테마와 그래프를 제공하는 파이썬 시각화 패키지.
 - 기본적으로 toy data(테스트 해볼 수 있는 데이터) 를 제공해준다.
 - 데이터프레임과의 연동이 잘 되어 있다. <-> matplotlib: 그래프를 그리기 위해 데이터를 사용자가 직접 지정해주어야 함
@@ -22,7 +22,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     tips = sns.load_dataset('tips') # tips라는 toy data를 불러옴
     ```
 
-## rugplot, kdeplot, displot
+## 1. rugplot, kdeplot, displot
 - 1차원 연속형 값들의 분포를 시각화 하는 그래프
 ### rugplot()
 - 각 데이터들의 위치를 보여준다.
@@ -58,7 +58,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     - `kde = True`: displot 위에 kdeplot 보여주기
     - `hue = ''`: 원하는 그룹으로 나눠서 보여주기 (= groupby())
 
-## boxplot, violinplot, swamplot
+## 2. boxplot, violinplot, swamplot
 - 연속형 데이터(양적데이터)들의 분포를 확인하는 그래프를 그린다.
 - 범주별로 연속형 데이터의 분포를 비교할 수 있다.
 
@@ -99,7 +99,7 @@ sns.boxplot(data = tips,
         hue = 'sex')
 ```  
 
-## 한개의 figure에 2개 이상의 그래프 그리기
+## 3. 한개의 figure에 2개 이상의 그래프 그리기
 
 - 구문 예시
 ```python
@@ -124,7 +124,7 @@ sns.boxplot(data=tips, y='tip')
 plt.show()
 ```
 
-## countplot()
+## 4. countplot()
 - 막대그래프(bar plot)을 그리는 함수
 - 범주형 변수의 고유값의 개수를 표시
 - matplotlib의 bar()
@@ -139,7 +139,7 @@ sns.countplot(data=tips, x='day')
     - `dodge=False`: 수평누적막대 그래프
 
 
-## scatterplot, lmplot, jointplot, pairplot
+## 5. scatterplot, lmplot, jointplot, pairplot
 - 산점도를 그리는 함수
 ### scatterplot()
 - pandas에서 scatter 했던 것과는 다르게 테두리가 흰색으로 표시가 됨
@@ -176,7 +176,7 @@ sns.jointplot(data=tips, x='total_bill', y = 'tip')
 sns.pairplot(tips)
 ```
 
-## heatmap()
+## 6. heatmap()
 - 값들에 비례해서 색을 다르게 해 2차원 자료로 시각화
 - 오른쪽에 보면 어떤 색이 관계가 높은지 알려준다.
 - 구문 예시
@@ -189,7 +189,7 @@ sns.heatmap(tips.corr(numeric_only=True)) # 수치형 값만 들어가야 되기
     - `fmt=''`: 표시된 값 소숫점 자리 설정
 
 
-## lineplot()
+## 7. lineplot()
 - 선그래프
 - 시간의 흐름에 따른 값의 변화를 보여주는데 유용하다. (시계열 데이터)
 - pandas의 dataframe과는 다르게 x(index) 값을 따로 설정해야 한다.  
@@ -202,7 +202,7 @@ sns.heatmap(tips.corr(numeric_only=True)) # 수치형 값만 들어가야 되기
 sns.lineplot(data=df, y='no1', x=df.index)
 ```
 
-## Palette(그래프 색깔)
+## + Palette(그래프 색깔)
 - 값이 추가 될 때 그래프의 색이 바뀌는데 정해져 있는 색 순서를 의미한다.
 - 현재 palette 확인 방법
 ```python
