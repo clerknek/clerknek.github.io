@@ -87,3 +87,23 @@ _출처: <https://www.oreilly.com/library/view/elegant-scipy/9781491922927/ch01.
     array.size 개수: 4
     len(array) 개수: 2
     ```
+
+## 동일한 값들로 구성된 배열 생성
+### zeros()
+- 구문 예시
+```python
+zeros(shape [, dtype])
+```
+### ones()
+- 구문 예시
+```python
+ones(shape [, dtype])
+```
+### full()
+- 구문 예시
+```python
+full(shape, fill_value [, dtype])
+```
+
+### zero_like(ndarray), ones_like(ndarray), full_like(ndarray, fill_value)
+- 매개변수로 받은 배열과 같은 shape의 배열을 생성한다.
