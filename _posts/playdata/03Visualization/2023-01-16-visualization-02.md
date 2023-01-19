@@ -18,11 +18,11 @@ tags: [python, matplotlib]     # TAG names should always be lowercase
         - 판다스 Series
 
 - 사용할 모듈
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-```
+    ```python
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import pandas as pd
+    ```
 
 ### 설정
 > <https://matplotlib.org/3.0.3/gallery/lines_bars_and_markers/line_styles_reference.html>
@@ -36,17 +36,17 @@ import pandas as pd
 - label: 선에 라벨 값 붙이기 -> 나중에 lengend()를 사용하면 선 이름이 보임
 
 
-```python
-x = np.linspace(1, 10, num=20) # 1 ~ 10을 20등분(num)한 분위 값으로 이뤄진 1차원 배열을 생성. 
-                                # -> 리스트나 시리즈 같이 다양한 자료구조로 변환할 수 있다. (1차원의 자료구조)
+    ```python
+    x = np.linspace(1, 10, num=20) # 1 ~ 10을 20등분(num)한 분위 값으로 이뤄진 1차원 배열을 생성. 
+                                    # -> 리스트나 시리즈 같이 다양한 자료구조로 변환할 수 있다. (1차원의 자료구조)
 
-# plt 함수를 이용해서 선그래프 그리기
-plt.plot(x, x)                                  # 기본 그래프
-plt.plot(x, x+1, linestyle ='--')               # 선 모양 변경
-plt.plot(x, x+2, marker='.', color='red')       # 값이 위치한 곳 표시 & 색상 변경
-plt.plot(x, x+3, linestyle ='-.', linewidth=5)  # 선 두께 변경
-plt.show()
-```
+    # plt 함수를 이용해서 선그래프 그리기
+    plt.plot(x, x)                                  # 기본 그래프
+    plt.plot(x, x+1, linestyle ='--')               # 선 모양 변경
+    plt.plot(x, x+2, marker='.', color='red')       # 값이 위치한 곳 표시 & 색상 변경
+    plt.plot(x, x+3, linestyle ='-.', linewidth=5)  # 선 두께 변경
+    plt.show()
+    ```
 
 ### Twin
 - 값의 범위(Scale)이 다른 두 값과 관련된 그래프를 한 Axes(subplot)에 그리는 경우 사용
@@ -68,10 +68,10 @@ plt.show()
     - legend(bbox_to_anchor=(x, y), loc="box의 상하, 좌우 위치")
     - bbox_to_anchor
         - 전체 subplot의 x축과 y축의 비율
-        ```
-        하단: (0, 0), (1, 0)
-        상단: (0, 1), (1, 1)
-        ```
+            ```
+            하단: (0, 0), (1, 0)
+            상단: (0, 1), (1, 1)
+            ```
     - loc -> bbox_to_anchor 좌표지정 범례 box의 어느 지점을 붙일 것인지 지정
         - ex) bbox_to_anchor=(1, 1), loc='upper left' : subplot (1, 1) 지점의 범례박스 위/왼쪽 점을 맞춘다.
 
@@ -131,16 +131,16 @@ plt.show()
 - 단점: 값의 위치를 일일히 지정해주어야 함
 - 주요 사용 방법
 - column 값이 문자일 경우
-```python
-for x, y in enumerate(df[y]):
-    plt.text(x, y, str(y))
-```
+    ```python
+    for x, y in enumerate(df[y]):
+        plt.text(x, y, str(y))
+    ```
 
 - column 값이 숫자일 경우
-```python
-for x, y in zip(df.columns, df[y]):  # column 의 값이 int 일 경우 원래 index 값이랑 다르기 때문에 zip을 사용해야 한다.
-    plt.text(x, y, str(y))
-```
+    ```python
+    for x, y in zip(df.columns, df[y]):  # column 의 값이 int 일 경우 원래 index 값이랑 다르기 때문에 zip을 사용해야 한다.
+        plt.text(x, y, str(y))
+    ```
 
 
 ### ylim()
