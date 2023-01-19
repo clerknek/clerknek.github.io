@@ -105,5 +105,8 @@ ones(shape [, dtype])
 full(shape, fill_value [, dtype])
 ```
 
-### zero_like(ndarray), ones_like(ndarray), full_like(ndarray, fill_value)
+### zeros_like(ndarray), ones_like(ndarray), full_like(ndarray, fill_value)
 - 매개변수로 받은 배열과 같은 shape의 배열을 생성한다.
+
+
+## 특정 범위내에서 동일한 간격의 값들로 구성된 배열 생성
