@@ -25,29 +25,29 @@ tags: [python, matplotlib, pandas]     # TAG names should always be lowercase
 ### Pandas 시각화 예시
 #### matplotlib
 
-```python
-plt.figure(figsize=(4,3)) # 버전이 업그레이드 되면서 밖에서도 설정할 수 있다.
-s.plot(kind='bar')
-plt.title('과일 수량') # matplotlib으로 설정
-plt.xlabel("과일")
-plt.ylabel('수량')
-plt.show()
-```
+    ```python
+    plt.figure(figsize=(4,3)) # 버전이 업그레이드 되면서 밖에서도 설정할 수 있다.
+    s.plot(kind='bar')
+    plt.title('과일 수량') # matplotlib으로 설정
+    plt.xlabel("과일")
+    plt.ylabel('수량')
+    plt.show()
+    ```
 
 #### plot()
 
 
-```python
-s.plot(kind='bar', title='과일 수량', xlabel='과일종류', ylabel='개수', figsize=(4,3))  # 판다스
-plt.show()
-```
+    ```python
+    s.plot(kind='bar', title='과일 수량', xlabel='과일종류', ylabel='개수', figsize=(4,3))  # 판다스
+    plt.show()
+    ```
 
 #### plot accessor
 
-```python
-s.plot.bar(title='과일 수량', xlabel='과일종류', ylabel='개수', figsize=(4,3))
-plt.show()
-```
+    ```python
+    s.plot.bar(title='과일 수량', xlabel='과일종류', ylabel='개수', figsize=(4,3))
+    plt.show()
+    ```
 
 ## 2. Line plot (선 그래프)
 
