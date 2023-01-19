@@ -7,3 +7,5 @@ tags: [github, chirpy]     # TAG names should always be lowercase
 
 # 사진 업로드 테스트
 
+- 사진 업로드 테스트 파일입니다.
+
