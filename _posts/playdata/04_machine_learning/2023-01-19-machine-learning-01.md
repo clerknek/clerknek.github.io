@@ -52,7 +52,21 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
     - 배열내 원소의 총 개수
 
 ![01_01.png](/assets/img/playdata/04_machinelearning/01_01.png)
-_출처: https://www.oreilly.com/library/view/elegant-scipy/9781491922927/ch01.html_
+_출처: <https://www.oreilly.com/library/view/elegant-scipy/9781491922927/ch01.html>_
 
 
 ## ndarray (넘파이 배열)
+
+## 배열 생성 함수
+
+### array()
+- 구문 예시
+    ```python
+    array(배열형태 객체 [, dtype])
+    ```
+#### 데이터 타입(dtype)
+> - 원소들의 데이터 타입
+> - ndarray.dtype 속성을 이용해 조회
+> - ndarray.astype(데이터타입)
+>   - 데이터타입 변환하는 메소드
+>   - 변환한 새로운 ndarray객체를 반환
