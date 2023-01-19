@@ -20,3 +20,4 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
     - 그래서 다른 라이브러리를 설치하게 되면 자동으로 설치된다.
 - 선형대수, 난수 생성, 푸리에 변환 기능 지원
 - 나중에 딥러닝(`pytorch`, `tensor`)의 경우에는 numpy를 사용하지는 않지만 데이터를 다루는 방식이 numpy와 유사하기 때문에 도움이 된다.
+
