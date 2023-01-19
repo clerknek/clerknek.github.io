@@ -21,3 +21,28 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
 - 선형대수, 난수 생성, 푸리에 변환 기능 지원
 - 나중에 딥러닝(`pytorch`, `tensor`)의 경우에는 numpy를 사용하지는 않지만 데이터를 다루는 방식이 numpy와 유사하기 때문에 도움이 된다.
 
+
+## Numpy의 데이터 구조
+- **Scalar (스칼라)**
+    - 값 하나
+- **Vector (백터)**
+    - 여러개의 값들을 순서대로 모아놓은 데이터 모음(데이터 레코드)
+    - 1D Tensor, 1D Array (1차원 배열)
+- **Matrix (행렬)**
+    - 벡터들을 모아놓은 데이터 집합. 2개의 방향으로 값들이 관리된다.
+    - 2D Tensor, 2D Array (2차원 배열)
+- **Tensor (텐서)**
+    - 같은 크기의 행렬들(텐서들)을 모아놓은 데이터 집합. N개의 방향으로 값들이 관리된다.
+    - ND Tensor, ND Array (다차원 배열)
+
+### 용어
+- 축 (axis)
+    - 값들의 나열 방향
+    - 하나의 축(axis)는 하나의 범주(분류, Category)이다.
+- 랭크 (rank)
+    - 데이터 집합에서 축의 개수
+    - 차원 (dimension) 이라고도 한다
+- 형태/형상 (shape)
+    - 각 축(axis) 별 데이터의 개수
+- 크기 (size)
+    - 배열내 원소의 총 개수
