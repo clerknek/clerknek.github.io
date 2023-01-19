@@ -65,8 +65,25 @@ _출처: <https://www.oreilly.com/library/view/elegant-scipy/9781491922927/ch01.
     array(배열형태 객체 [, dtype])
     ```
 #### 데이터 타입(dtype)
-> - 원소들의 데이터 타입
-> - ndarray.dtype 속성을 이용해 조회
-> - ndarray.astype(데이터타입)
->   - 데이터타입 변환하는 메소드
->   - 변환한 새로운 ndarray객체를 반환
+- 원소들의 데이터 타입
+- ndarray.dtype 속성을 이용해 조회
+- ndarray.astype(데이터타입)
+    - 데이터타입 변환하는 메소드
+    - 변환한 새로운 ndarray객체를 반환
+    - 데이터 타입을 변환할때 큰 데이터 타입에서 작은 데이터 타입으로 바뀌면 값이 바뀔 수도 있으니 주의해야 한다.
+
+
+#### + array.size vs len(array)
+- array.size: array 안의 데이터 개수
+- len(array): array 안의 원소 개수
+- 예시 코드
+    ```python
+    a1 = np.array([[1, 2], [2, 3]])
+    print("array.size 개수:", a1.size) # 배열.size - 전체 원소 개수
+    print("len(array) 개수:", len(a1)) # len(배열) - 0축 size
+    ```
+- 예시 코드 결과 값
+    ```
+    array.size 개수: 4
+    len(array) 개수: 2
+    ```
