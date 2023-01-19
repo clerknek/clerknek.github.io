@@ -44,5 +44,13 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
     - 차원 (dimension) 이라고도 한다
 - 형태/형상 (shape)
     - 각 축(axis) 별 데이터의 개수
+    - 주로 tuple로 형태를 알려준다.
+    - 예시) 이미지를 사용할 때 shape 순서들이 다른데 이것을 이해하는 것이 중요하다.
+        - Tensorflow (사진 개수, 가로, 세로, 3 `-> rgb`)
+        - Pytorch(사진 개수, 3, 가로, 세로)
 - 크기 (size)
     - 배열내 원소의 총 개수
+
+
+
+## ndarray (넘파이 배열)
