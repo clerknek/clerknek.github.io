@@ -6,7 +6,8 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
 ---
 
 ## NumPy
-- <http://www.numpy.org>  
+- <http://www.numpy.org>
+
 - 배열, Numerical Python의 약어
 - 벡터, 행렬 연산을 위한 수치해석용 파이썬 라이브러리
     - 강력한 다차원 배열(array) 지원
