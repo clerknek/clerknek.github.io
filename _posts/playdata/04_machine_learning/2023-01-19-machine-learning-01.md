@@ -52,8 +52,7 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
     - 배열내 원소의 총 개수
 
 ![01_01.png](/assets/img/playdata/04_machinelearning/01_01.png)
-
-[출처: https://www.oreilly.com/library/view/elegant-scipy/9781491922927/ch01.html]
+_출처: https://www.oreilly.com/library/view/elegant-scipy/9781491922927/ch01.html_
 
 
 ## ndarray (넘파이 배열)
