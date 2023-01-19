@@ -22,6 +22,152 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     tips = sns.load_dataset('tips') # tips라는 toy data를 불러옴
     ```
 
+- tips 데이터 셋
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>29.03</td>
+      <td>5.92</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>27.18</td>
+      <td>2.00</td>
+      <td>Female</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>22.67</td>
+      <td>2.00</td>
+      <td>Male</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>17.82</td>
+      <td>1.75</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>18.78</td>
+      <td>3.00</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Thur</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>244 rows × 7 columns</p>
+</div>
+
+
 ## 1. rugplot, kdeplot, displot
 - 1차원 연속형 값들의 분포를 시각화 하는 그래프
 ### rugplot()
@@ -36,6 +182,9 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     ```python
     sns.rugplot(data=tips, x='total_bill')
     ```
+
+![rugplot](../../../assets/img/playdata/04_machinelearning/05-01.png)
+
 
 ### kdeplot()
 - KDE를 그려줌
