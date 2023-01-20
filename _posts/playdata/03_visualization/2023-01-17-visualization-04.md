@@ -173,7 +173,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 ### rugplot()
 - 각 데이터들의 위치를 보여준다.
 
-- 기본 구문
+- 코드 형식
     ```python
     sns.rugplot(tips['total_bill'])
     ```
@@ -183,22 +183,40 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     sns.rugplot(data=tips, x='total_bill')
     ```
 
-![rugplot](../../../assets/img/playdata/04_machinelearning/05-01.png)
+- 코드 예시
+    ```python
+    sns.rugplot(data=tips, x='total_bill') # data: DataFrame 지정. x="컬럼명"
+    plt.title('Total bill의 분포')
+    plt.show()
+    ```
+
+    ![rugplot](../../../assets/img/playdata/04_machinelearning/05-01.png)
 
 
 ### kdeplot()
 - KDE를 그려줌
     - KDE(Kernel Density Estimation): 확률 밀도 추정
-- 구문 예제
+- 코드 형식
     ```python
     sns.kdeplot(data=tips, x='total_bill')
     ```
+
+- 코드 예시
+    ```python
+    sns.displot(data=tips, x='total_bill', bins=30,
+           rug = True,
+           kde = True)
+    plt.show()
+    ```
+
+    ![kdeplot](../../../assets/img/playdata/04_machinelearning/05-02.png)
+
 
 ### displot()
 - 히스토그램을 기준으로 rugplot, kdeplot을 같이 그릴 수 있다
 - 위 2개 보다 많이 씀
 
-- 구문 예시
+- 코드 형식
     ```python
     sns.displot(data=tips, x='total_bill')
     ```
@@ -206,6 +224,17 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     - `rug = True`: displot 위에 rugplot 보여주기
     - `kde = True`: displot 위에 kdeplot 보여주기
     - `hue = ''`: 원하는 그룹으로 나눠서 보여주기 (= groupby())
+
+- 코드 예시
+    ```python
+    sns.displot(x='total_bill', data=tips, bins=30,
+            rug = True,
+            kde = True)
+    plt.show()
+    ```
+
+    ![displot](../../../assets/img/playdata/04_machinelearning/05-03.png)
+
 
 ## 2. boxplot, violinplot, swamplot
 - 연속형 데이터(양적데이터)들의 분포를 확인하는 그래프를 그린다.
