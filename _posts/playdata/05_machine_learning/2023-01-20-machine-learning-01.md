@@ -98,7 +98,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 - 대부분의 머신러닝은 지도학습이다.
 - 지도학습은 분류와 회귀로 나뉜다.
 
-- ### 분류(Classification):
+### 분류(Classification):
     - **두개 이상의 클래스(범주)에서 선택을 묻는 지도 학습방법**
         - **이진 분류** : 맞는지 틀린지를 분류.
         - **다중 분류** : 여러개의 클래스중 하나를 분류
@@ -110,7 +110,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
     - 랜덤 포레스트(Random Forest)
     - 신경망(Neural Network)
 
-- ### 회귀(Regression):
+### 회귀(Regression):
     - **숫자(연속된값)를 예측 하는 지도학습**
     - 의사결정나무(Decision Tree)
     - 선형 회귀(Linear Regression)
@@ -160,17 +160,19 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
     - 평가 결과가 좋으면 실제 업무에 적용
 
 # 파이썬 머신러닝,딥러닝 주요 패키지
-- ### Scikit-learn
+### Scikit-learn
     - 딥러닝을 제외한 머신러닝 주요 알고리즘 제공
-- ### Tensorflow
+### Tensorflow
     - 구글 브레인 팀이 개발한 텐서플로우는 머신러닝 및 딥러닝 위한 오픈소스 라이브러리다.
-- ### Keras
+### Keras
     - 딥러닝 모델을 쉽게 만들 수 있도록 다양한 딥러닝 플랫폼 위에서 실행되는 고수준 딥러닝 패키지.
     - Tensorflow 2.0 부터 keras를 포함하고 있다.
-- ### Pytorch
+### Pytorch
     - 토치(Torch) 및 카페2(Caffe2) 프레임워크를 기반으로한 페이스북에서 만든 딥러닝 프레임워크
 
-# [사이킷런(scikit-learn)](https://scikit-learn.org/stable)
+# 사이킷런(scikit-learn)
+
+    <https://scikit-learn.org/stable>
 
 파이썬 머신러닝 라이브러리가 가장 많이 사용된다. 딥러닝을 제외한 대부분의 머신러닝 알고리즘을 제공한다.
 
@@ -189,7 +191,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 ```
 
 ## Estimator와 Transformer
-- ### Estimator (추정기)
+### Estimator (추정기)
     - 데이터를 학습하고 예측하는 알고리즘(모델)들을 구현한 클래스들
         - ex) DecisionTreeClassifier, LinearRegression 등
     - fit() 
@@ -197,7 +199,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
     - predict()
         - 예측을 하는 메소드
 
-- ### Transformer (변환기)
+### Transformer (변환기)
     - 데이터 전처리를 하는 클래스들. 데이터 셋의 값의 형태를 변환한다.
         - ex) LabelEncoder, MinMaxScaler등
     - fit()
