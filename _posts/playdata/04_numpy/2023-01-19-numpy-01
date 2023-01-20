@@ -1,7 +1,7 @@
 ---
-title: '[Machine Learning] 01. Numpy 개요'
+title: '[Numpy] 01. Numpy 개요'
 date: 23-01-19 12:28:23 +0800
-categories: ['Data Analysis', '04. Machine Learning']
+categories: ['Data Analysis', '04. Numpy']
 tags: [python, numpy, machinelearning]     # TAG names should always be lowercase
 ---
 
