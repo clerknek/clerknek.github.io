@@ -41,7 +41,9 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
         [ 1 22]
             
         
-    - 좌표 형식이라고 생각하면 편함 위 코드의 경우는 `a[0, 1]`과 `a[3, 4]`를 한번에 조회하는 방식이다.
+    - **좌표 형식**이라고 생각하면 편함
+        - 2차원의 경우 앞 리스트는 가로, 뒤 리스트는 세로에서의 값의 위
+    - 위 코드의 경우는 `a[0, 1]`과 `a[3, 4]`를 한번에 조회하는 방식이다.
 
 ## Slicing (슬라이싱)
 
@@ -67,3 +69,20 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
 - `배열.copy()`
     - 배열을 복사한 새로운 배열 생성
     - 복사후 처리하면 원본이 바뀌지 않는다.
+
+## boolean indexing
+- Index 연산자에 같은 형태(shape)의 Boolean 배열을 넣으면 True인 index의 값만 조회 (False가 있는 index는 조회하지 않는다.)
+- ndarray내의 원소 중에서 원하는 조건의 값들만 조회할 때 사용
+    - ndarray는 **element-wise** 연산을 지원한다. 이를 이용해 boolean indexing으로 원하는 조건의 값들을 조회할 수 있다.
+- boolean indexing을 masking이라고도 한다.
+- 2차원 이상인 경우에도 가능하다
+
+## 넘파이 비교 연산자
+- 파이썬의 and, or, not은 사용할 수 없다.
+- `&`: and연산
+- `|`: or 연산
+- `~`: not 연산
+- 피연산자는 `( )`로 묶어야 한다.
+- Boolean indexing의 경우에는 들어간 array 의 형태와 똑같이 나오지만 비교 연산을 하고 난 이후에는 shape를 유지를 못하기 때문에 1차원 형식으로 돌려준다.
+
+
