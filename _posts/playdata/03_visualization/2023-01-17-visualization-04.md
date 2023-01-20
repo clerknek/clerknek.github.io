@@ -252,11 +252,17 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     ax1 = fig.add_subplot(1, 2, 1)
     ax2 = fig.add_subplot(1, 2, 2)
 
-    sns.boxplot(x='total_bill', data=tips, ax=ax1)
-    sns.boxplot(y='tip', data=tips, ax=ax2)
+    # x(y): 연속형, y(x): 범주형
+    sns.boxplot(x = 'total_bill',
+                y = 'smoker',
+                hue = 'sex',
+                data = tips, ax=ax1)
+    sns.boxplot(y='tip', x='smoker', hue='time', data=tips, ax=ax2)
+    ax1.legend(bbox_to_anchor=(0,1.05), loc='upper right', title='sex')
     plt.show()
     ```
-    ![Alt text](../../../assets/img/playdata/04_machinelearning/05-05.png)
+
+    ![boxplot](../../../assets/img/playdata/04_machinelearning/05-05.png)
 
 
 ### **violinplot()**
@@ -266,6 +272,21 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     ```python
     sns.violinplot(data=tips, y='tip')
     ```  
+
+- 코드 예시
+    ```python
+    plt.subplot(1, 2, 1)
+    sns.violinplot(data=tips, x='tip')
+
+    plt.subplot(1, 2, 2)
+    sns.violinplot(data=tips, y='tip', 
+                x='day',
+                hue='smoker')
+
+    plt.show()
+    ```
+
+    ![violinplot](../../../assets/img/playdata/04_machinelearning/05-06.png)
 
 ### **swapplot()**
 - 실제 값에 점을 찍어 준다.
