@@ -191,7 +191,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     plt.show()
     ```
 
-    ![rugplot](../../../assets/img/playdata/04_machinelearning/05-01.png)
+    ![rugplot](../../../assets/img/playdata/03_visualization/05-01.png)
 
 
 ### **kdeplot()**
@@ -210,7 +210,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     plt.show()
     ```
 
-    ![kdeplot](../../../assets/img/playdata/04_machinelearning/05-02.png)
+    ![kdeplot](../../../assets/img/playdata/03_visualization/05-02.png)
 
 
 ### **displot()**
@@ -234,7 +234,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     plt.show()
     ```
 
-    ![displot](../../../assets/img/playdata/04_machinelearning/05-03.png)
+    ![displot](../../../assets/img/playdata/03_visualization/05-03.png)
 
 
 ## 2. boxplot, violinplot, swamplot
@@ -262,7 +262,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     plt.show()
     ```
 
-    ![boxplot](../../../assets/img/playdata/04_machinelearning/05-05.png)
+    ![boxplot](../../../assets/img/playdata/03_visualization/05-05.png)
 
 
 ### **violinplot()**
@@ -286,7 +286,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     plt.show()
     ```
 
-    ![violinplot](../../../assets/img/playdata/04_machinelearning/05-06.png)
+    ![violinplot](../../../assets/img/playdata/03_visualization/05-06.png)
 
 ### **swapplot()**
 - 실제 값에 점을 찍어 준다.
