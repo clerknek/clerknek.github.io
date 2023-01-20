@@ -35,8 +35,10 @@ tags: [python, numpy, machinelearning]     # TAG names should always be lowercas
             print(a[[0, 3], [1, 4]])
             ```
 
-            ```
-            [ 1 22]
-            ```
+            
+            
+            
+                [ 1 22]
+            
         
         - 좌표 형식이라고 생각하면 편함 위 코드의 경우는 엄밀히 말하면 `a[0, 1]`과 `a[3, 4]`를 조회하는 거
