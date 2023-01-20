@@ -47,18 +47,18 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 ## 머신러닝과 딥러닝
 
 ### 머신러닝(Machine Learning)
-> - 데이터 학습 기반의 인공 지능 분야
-> - 기계에게 어떻게 동작할지 일일이 코드로 명시하지 않고 데이터를 이용해 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 인공지능의 한분야
+- 데이터 학습 기반의 인공 지능 분야
+- 기계에게 어떻게 동작할지 일일이 코드로 명시하지 않고 데이터를 이용해 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 인공지능의 한분야
 
 ### 딥러닝 (Deep Learning)
-> - 인공신경망 알고리즘을 기반으로 하는 머신러닝의 한 분야. 비정형데이터(영상, 음성, 텍스트)에서 뛰어난 성능을 나타낸다. 단 학습 데이터의 양이 많아야 한다.
+- 인공신경망 알고리즘을 기반으로 하는 머신러닝의 한 분야. 비정형데이터(영상, 음성, 텍스트)에서 뛰어난 성능을 나타낸다. 단 학습 데이터의 양이 많아야 한다.
 
-> - 비정형 데이터
->    - 정해진 규칙 없이 저장되어 값의 의미를 쉽게 파악할 수 없는 데이터
->    - 텍스트, 영상, 음성 데이터가 대표적인 예이다.
-> - 정형 데이터
->    - 미리 정해 놓은 형식과 구조에 따라 저장되도록 구성된 데이터
->    - 대표적이 예로 관계형 데이터베이스가 있다.
+- 비정형 데이터
+    - 정해진 규칙 없이 저장되어 값의 의미를 쉽게 파악할 수 없는 데이터
+    - 텍스트, 영상, 음성 데이터가 대표적인 예이다.
+- 정형 데이터
+    - 미리 정해 놓은 형식과 구조에 따라 저장되도록 구성된 데이터
+    - 대표적이 예로 관계형 데이터베이스가 있다.
 
 
 ## 머신러닝 모델(알고리즘, 모형)
@@ -170,9 +170,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 - ### Pytorch
     - 토치(Torch) 및 카페2(Caffe2) 프레임워크를 기반으로한 페이스북에서 만든 딥러닝 프레임워크
 
-# 사이킷런(scikit-learn)
-
-<https://scikit-learn.org/stable>  
+# [사이킷런(scikit-learn)](https://scikit-learn.org/stable)
 
 파이썬 머신러닝 라이브러리가 가장 많이 사용된다. 딥러닝을 제외한 대부분의 머신러닝 알고리즘을 제공한다.
 
@@ -211,5 +209,5 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 ## 사이킷런 주요모듈
 
-![Alt text](../../../assets/img/playdata/05_machine_learning/01_01.png)
+![scikitlearn](../../../assets/img/playdata/05_machine_learning/01_01.png)
 
