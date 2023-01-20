@@ -170,10 +170,11 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 
 ## 1. rugplot, kdeplot, displot
 - 1차원 연속형 값들의 분포를 시각화 하는 그래프
-### rugplot()
+
+### **rugplot()**
 - 각 데이터들의 위치를 보여준다.
 
-- 코드 형식
+- 기본 코드
     ```python
     sns.rugplot(tips['total_bill'])
     ```
@@ -193,10 +194,10 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     ![rugplot](../../../assets/img/playdata/04_machinelearning/05-01.png)
 
 
-### kdeplot()
+### **kdeplot()**
 - KDE를 그려줌
     - KDE(Kernel Density Estimation): 확률 밀도 추정
-- 코드 형식
+- 기본 코드
     ```python
     sns.kdeplot(data=tips, x='total_bill')
     ```
@@ -212,11 +213,11 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
     ![kdeplot](../../../assets/img/playdata/04_machinelearning/05-02.png)
 
 
-### displot()
+### **displot()**
 - 히스토그램을 기준으로 rugplot, kdeplot을 같이 그릴 수 있다
 - 위 2개 보다 많이 씀
 
-- 코드 형식
+- 기본 코드
     ```python
     sns.displot(data=tips, x='total_bill')
     ```
@@ -240,33 +241,45 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 - 연속형 데이터(양적데이터)들의 분포를 확인하는 그래프를 그린다.
 - 범주별로 연속형 데이터의 분포를 비교할 수 있다.
 
-### boxplot()
-- 구문 예시
+### **boxplot()**
+- 기본 코드
     ```python
     sns.boxplot(data=tips, x='total_bill')
     ```  
 
-### violinplot()
+- 코드 예시
+    ```python
+    ax1 = fig.add_subplot(1, 2, 1)
+    ax2 = fig.add_subplot(1, 2, 2)
+
+    sns.boxplot(x='total_bill', data=tips, ax=ax1)
+    sns.boxplot(y='tip', data=tips, ax=ax2)
+    plt.show()
+    ```
+    ![Alt text](../../../assets/img/playdata/04_machinelearning/05-05.png)
+
+
+### **violinplot()**
 - boxplot위에 분포 밀도(kernel density)를 좌우 대칭으로 덮어쓰는 방식의 그래프 -> kde 그래프를 boxplot 좌우로 붙인 모양
 - 매개변수는 boxplot과 동일
-- 구문 예시
+- 기본 코드
     ```python
     sns.violinplot(data=tips, y='tip')
     ```  
 
-### swapplot()
+### **swapplot()**
 - 실제 값에 점을 찍어 준다.
 - boxplot나 violin plot을 보안해준다.
 - 좀더 정확하게 값이 어디있는지 알 수 있다.
 - 단독으로는 잘 안쓰고 boxplot나 violin plot위에 그린다
-- 구문 예시
+- 기본 코드
 
     ```python
     sns.boxplot(data = tips, y = 'tip', color='r')
     sns.swarmplot(data = tips, y = 'tip')
     ```
 
-### 여러가지 값을 한 그래프로 표현
+### **여러가지 값을 한 그래프로 표현**
 - 1. y로(y가 있을 때는 x로) 먼저 나눈다.
 - 2. hue를 이용해 또 나눈다
 - 예시 코드
@@ -280,7 +293,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 
 ## 3. 한개의 figure에 2개 이상의 그래프 그리기
 
-- 구문 예시
+- 기본 코드
     ```python
     fig = plt.figure(figsize=(15, 10))
     ax1 = fig.add_subplot(1, 2, 1)
@@ -308,7 +321,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 - 범주형 변수의 고유값의 개수를 표시
 - matplotlib의 bar()
 
-- 구문 예시
+- 기본 코드
     ```python
     sns.countplot(data=tips, x='day')
     ```
@@ -320,37 +333,37 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 
 ## 5. scatterplot, lmplot, jointplot, pairplot
 - 산점도를 그리는 함수
-### scatterplot()
+### **scatterplot()**
 - pandas에서 scatter 했던 것과는 다르게 테두리가 흰색으로 표시가 됨
-- 구문 예시
+- 기본 코드
     ```python
     sns.scatterplot(data=tips, x='total_bill')
     ```
 - 추가 설정
     - `hue=''`: ~ 별로 나눠서 색깔을 표시
         
-### lmplot()
+### **lmplot()**
 - 산점도 위에 선형 회귀 적합선(+ 오차 범위)을 그린다.
-- 구문 예시
+- 기본 코드
     ```python
     sns.lmplot(data=tips, x='total_bill', y='tip')
     ```
 
-### jointplot()
+### **jointplot()**
 - 산점도 그래프 밖에 각 변수의 히스토그램을 그린다.
 - pandas DataFrame만 사용할 수 있다.
-- 구문 예시
+- 기본 코드
     ```python
     sns.jointplot(data=tips, x='total_bill', y = 'tip')
     ```
 
-### pairplot()
+### **pairplot()**
 - 다변수(다차원) 데이터들 간의 산점도를 보여준다.
 - 모든 column 간의 데이터 분포를 보여준다.
     - 수치형 데이터들만 그린다.
     - 데이터프레임을 인수로 받아 그리드(grid) 형태로 각 변수간의 산점도를 그린다. 
     - 같은 변수가 만나는 대각선 영역에는 해당 데이터의 히스토그램을 그린다.
-- 구문 예시
+- 기본 코드
     ```python
     sns.pairplot(tips)
     ```
@@ -358,7 +371,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 ## 6. heatmap()
 - 값들에 비례해서 색을 다르게 해 2차원 자료로 시각화
 - 오른쪽에 보면 어떤 색이 관계가 높은지 알려준다.
-- 구문 예시
+- 기본 코드
     ```python
     sns.heatmap(tips.corr(numeric_only=True)) # 수치형 값만 들어가야 되기 때문에 numeric_only=True를 추가한다.
     ```
@@ -376,7 +389,7 @@ tags: [python, matplotlib, seaborn]     # TAG names should always be lowercase
 - 장점: hue를 이용해서 범주 값으로 나눠서 그래프를 만들기 쉽다.
 - 단점: 일괄적으로 그래프를 그리고 싶을 때는 각 그래프 별로 적어야 해서 불편하다.
 
-- 구문 예시
+- 기본 코드
     ```python
     sns.lineplot(data=df, y='no1', x=df.index)
     ```
