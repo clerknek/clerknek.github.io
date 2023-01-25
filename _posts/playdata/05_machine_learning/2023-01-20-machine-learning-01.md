@@ -60,6 +60,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
     - 미리 정해 놓은 형식과 구조에 따라 저장되도록 구성된 데이터
     - 대표적이 예로 관계형 데이터베이스가 있다.
 
+![machine learning](../../../assets/img/playdata/05_machine_learning/01_01.png)
 
 ## 머신러닝 모델(알고리즘, 모형)
 - 모델이란 데이터의 패턴을 수식화 한 함수를 말한다.
@@ -71,6 +72,8 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 2. 모델을 데이터를 이용해 학습(Train) 시킨다. 
     - 모델을 데이터의 패턴에 맞춘다. (fit)
 3. 학습된 모델이 얼마나 데이터 패턴을 잘 표현하는지 평가한다.(Test)
+
+![pattern](../../../assets/img/playdata/05_machine_learning/01_02.png)
 
 ## 데이터 관련 용어
 ### Feature
@@ -90,6 +93,10 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 ### 데이터 포인트
 - 개별 데이터를 표현하는 용어. 
+
+![iris](../../../assets/img/playdata/05_machine_learning/01_03.png)
+![dog and cat](../../../assets/img/playdata/05_machine_learning/01_04.png)
+
 
 # 머신러닝 알고리즘 분류
 
@@ -137,6 +144,8 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
     
 
 # 머신러닝 개발 절차 (Machine Learning Process)
+
+![process](../../../assets/img/playdata/05_machine_learning/01_05.png)
 
 1. Business Understanding
     - 머신러닝 개발을 통해 얻고자 하는 것 파악.
@@ -211,5 +220,9 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 ## 사이킷런 주요모듈
 
-![scikitlearn](../../../assets/img/playdata/05_machine_learning/01_01.png)
+![scikitlearn](../../../assets/img/playdata/05_machine_learning/01_06.png)
 
+
+# 요약
+- 머신러닝이 하는 일은 주어진 input값과 output을 바탕으로 함수를 찾는 것이다.
+- 
