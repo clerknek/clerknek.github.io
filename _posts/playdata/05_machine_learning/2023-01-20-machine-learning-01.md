@@ -12,8 +12,8 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 ### 지능이란?
 - 지능: 어떤 문제를 해결하기 위한 지적 활동 능력
 - 인공지능
-     - 기계가 사람의 지능을 모방하게 하는 기술
-     - 규칙기반, 데이터 학습 기반
+    - 기계가 사람의 지능을 모방하게 하는 기술
+    - 규칙기반, 데이터 학습 기반
 
 ### 정의
 - 다트머스대학 수학과 교수인 존 매카시(John McCarthy)가 "지능이 있는 기계를 만들기 위한 과학과 공학" 이란 논문에서 처음으로 제안(1955년)
@@ -172,7 +172,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 # 사이킷런(scikit-learn)
 
-    <https://scikit-learn.org/stable>
+<https://scikit-learn.org/stable>
 
 파이썬 머신러닝 라이브러리가 가장 많이 사용된다. 딥러닝을 제외한 대부분의 머신러닝 알고리즘을 제공한다.
 
