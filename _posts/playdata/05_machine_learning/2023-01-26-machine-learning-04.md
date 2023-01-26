@@ -85,7 +85,7 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
         - 예) 나이, 무게, 거리, 소득
 
 - **각 데이터 별 Feature Type 설명**
-    - **실수형 데이터**로 구성된 Feature는 *연속형 값*이다.
+    - <span style='background-color:#fff5b1'>실수형 데이터</span>로 구성된 Feature는 *연속형 값*이다.
     - **문자열 데이터**로 구성된 Feature는 *단순 문자열값이거나 범주형 값*이다.
     - **정수형 데이터**로 구성된 Feature는 *범주형이거나 연속형 값*이다.
         - 몇개의 **고유값**으로 구성되었는지를 봐야 한다.
