@@ -20,6 +20,8 @@ tags: [python, machinelearning, sklearn]     # TAG names should always be lowerc
                     )
     ```
 4. 모델 생성
+    - 모델을 생성할 때 모델별로 매개변수가 있는 데 이 매개변수에 의해 모델 성능에 차이가 생길 수 있다. -> **Hyper Parameter(사용자가 정해주는 값)**
+    - ex) DecisionTreeClassifier의 max_depth
 5. Train set을 이용해서 모델 학습
 6. 평가
     - 머신러닝 평가지표 함수들은 sklearn.metrics 모듈에 있다.
