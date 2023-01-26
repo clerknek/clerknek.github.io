@@ -2,7 +2,7 @@
 title: '[Machine Learning] 02. 머신러닝 기본 순서'
 date: 23-01-25 12:37:23 +0800
 categories: ['Data Analysis', '05. Machine Learning']
-tags: [python, machinelearning]     # TAG names should always be lowercase
+tags: [python, machinelearning, sklearn]     # TAG names should always be lowercase
 ---
 
 ## 머신러닝 순서
