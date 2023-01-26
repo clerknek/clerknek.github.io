@@ -196,8 +196,9 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 
 ```python
-
+!pip install scikit-learn
 ```
+
 
 ## Estimator와 Transformer
 ### Estimator (추정기)
@@ -225,4 +226,3 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 # 요약
 - 머신러닝이 하는 일은 주어진 input값과 output을 바탕으로 함수를 찾는 것이다.
-- 
