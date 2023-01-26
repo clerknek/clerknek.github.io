@@ -55,3 +55,17 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
         - 회귀문제의 Dataset을 분리할 때 사용
     - StratifiedKFold
         - 분류문제의 Dataset을 분리할 때 사용
+
+### KFold vs StratifiedKFold
+- KFold
+    - 회귀문제일 때 사용
+- StratifiedKFold
+    - 분류문제일 때 사용
+    - 각각의 클래스 별로 각각 순서대로 나눈다
+        - 클래스 개수의 비율이 동일하게 나눠진다.
+
+## GreedSearch에 대한 간단한 설명
+- 대부분의 평가 결과는 클수록 결과가 좋다고 한다 ex) 적중률: 0.98 > 0.75
+- 하지만 오차를 계산할 때는 오차 범위가 작은 것이 더 좋은 결과이다. ex) 오차: 13.75 > 75.2
+    - 그것을 해결하기 위해서 평가지표에 -를 붙이는 일을 한다.
+        - ex) `scoring='neg_mean_squared_error'`
