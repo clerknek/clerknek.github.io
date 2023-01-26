@@ -24,7 +24,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 ## Hold Out
 
-![hold out](../../../assets/img/playdata/05_machine_learning/03_01.png)
+![holdout](../../../assets/img/playdata/05_machine_learning/03_01.png)
 
 - 데이터셋을 Train set, Validation set, Test set으로 나눈다.
 - sklearn.model_selection.train_test_split() 함수 사용
@@ -42,11 +42,12 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 ## K-Fold Cross Validation
 
-![cross validation](../../../assets/img/playdata/05_machine_learning/03_02.png)
+![crossvalidation](../../../assets/img/playdata/05_machine_learning/03_02.png)
 
 1. 데이터셋을 설정한 K개로 나눈다
 2. K개 중 하나를 Validation set으로 나머지는 Train set으로 하여 모델을 학습 및 평가한다.
 3. 2번의 과정을 Validation set를 K번 바꿔가며 모델을 학습시킨 뒤 나온 평가지표의 평균을 내서 모델 성능을 평가한다.
+
 - 데이터 양이 적을 때 사용
 - 보통 Fold를 나눌때 2.5:7.5 또는 2:8 비율이 되게 하기 위해 4개 또는 5개 fold로 나눈다.
 - 종류
