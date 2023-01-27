@@ -99,6 +99,8 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 - 이용 가능 모델
     - 트리 계열 모델
         - 숫자 크기의 차이가 모델에 영향을 주지 않는다.
+        - 하나의 컬럼만 가지고 하나의 질문(트리)만 할때 자주 사용한다
+
         - ex) 의사결정나무, Random Forest
 
 - 이용 불가능 모델
@@ -108,6 +110,8 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 
 ![label_encoding](../../../assets/img/playdata/05_machine_learning/04_01.png)
 
+
+
 - sklearn.preprocessing.LabelEncoder 사용
     - fit(): 어떻게 변환할 지 학습 `-> TV를 0으로 냉장고를 1로 하겠다.`
     - transform(): 문자열를 숫자로 변환 `-> 실질적인 값 변환`
@@ -116,15 +120,20 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
     - classes_ : 인코딩한 클래스 조회 `-> 각각의 transform 결과 조회 주황색 표`
         - `_`: 사이킷런에서 앞의 문자가 변수를 나타낸다는 것을 알려주기 위해 사용하는 방법
 
+    - 데이터셋은 **1차원** 자료구조로 추출한다.
+        - ex) `['TV', '냉장고', '에어컨', '컴퓨터']`
+
     
 ### One-Hot Encoding
 
-- N개의 클래스를 N 차원의 One-Hot 벡터로 표현되도록 반환
+- N개의 클래스를 N 차원의 One-Hot 벡터(희소 행렬)로 표현되도록 반환
     - 고유값들을 피처(컬럼)로 만들고 정답에 해당하는 열은 1로 나머진 0으로 표시한다.
+        - 희소 행렬: 대부분 0값이 들어가는 행렬
 
 - 이용 가능 모델
     - 선형 계열 모델
         - 숫자 크기의 차이가 모델에 영향을 준다.
+        - 하나의 컬럼만 가지고 하나의 질문 할때(트리 계열) 분리가 잘 되지 않는다        
         - ex) Logistic Regression, SVM, 신경망
 
 - 이용 불가능 모델
@@ -133,3 +142,26 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
         - ex) 의사결정나무, Random Forest
 
 ![one_hot_encoding](../../../assets/img/playdata/05_machine_learning/04_02.png)
+
+- sklearn.preprocessing.OneHotEncoder 이용
+    - fit(): 데이터셋을 기준으로 어떻게 변환할 지 학습
+    - transform(): Argument로 받은 데이터셋을 원핫인코딩 처리
+    - fit_transform(): 학습과 변환을 한번에 처리
+    - get_feature_names_out() : 원핫인코딩으로 변환된 Feature(컬럼)들의 이름을 반환
+    - 데이터셋은 **2차원 배열**을 전달 하며 Feature별로 원핫인코딩 처리한다.
+        - DataFrame도 가능
+        - 원핫인코딩 처리시 모든 타입의 값들을 다 변환한다. (연속형 값들도 변환) 그래서 변환려는 변수들만 모아서 처리해야 한다.
+        - ex)`[["TV"], ["냉장고"]...]`
+
+- **Pandas**
+    - pandas.get_dummies(DataFrame [, columns=[변환할 컬럼명]]) 함수 이용
+    - DataFrame에서 범주형(`object`, `category`) 변수만 변환한다.
+        - 숫자는 그냥 One-Hot encoding이 안된다.
+            - 범주형 변수의 값을 숫자 값을 가지는 경우가 있다. (ex: 별점, 레벨)    
+            - 이런 경우 get_dummies() columns=['컬럼명','컬럼명'] 매개변수로 컬럼들을 명시한다.
+
+### Label Encoding vs One-Hot Encoding
+- 숫자의 크기 차이가 모델에 영향을 미치는 선형 계열 모델(로지스틱회귀, SVM, 신경망)에서 범주형 데이터 변환시 Label Encoding보다 One Hot Encoding을 사용한다.
+- DecisionTree 계열의 알고리즘은 Feature에 0이 많은 경우(Sparse Matrix라고 한다.) 성능이 떨어지기 때문에 Label Encoding을 한다.
+
+
