@@ -111,10 +111,25 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 - sklearn.preprocessing.LabelEncoder 사용
     - fit(): 어떻게 변환할 지 학습 `-> TV를 0으로 냉장고를 1로 하겠다.`
     - transform(): 문자열를 숫자로 변환 `-> 실질적인 값 변환`
-    - fit_transform(): 학습과 변환을 한번에 처리
+    - fit_transform(): 학습과 변환을 한번에 처리 `-> fit(), transform()에서 사용한 데이터셋이 같은 경우 사용`
     - inverse_transform():숫자를 문자열로 변환 `-> 0을 원래 값인 TV로 변환`
     - classes_ : 인코딩한 클래스 조회 `-> 각각의 transform 결과 조회 주황색 표`
         - `_`: 사이킷런에서 앞의 문자가 변수를 나타낸다는 것을 알려주기 위해 사용하는 방법
 
     
 ### One-Hot Encoding
+
+- N개의 클래스를 N 차원의 One-Hot 벡터로 표현되도록 반환
+    - 고유값들을 피처(컬럼)로 만들고 정답에 해당하는 열은 1로 나머진 0으로 표시한다.
+
+- 이용 가능 모델
+    - 선형 계열 모델
+        - 숫자 크기의 차이가 모델에 영향을 준다.
+        - ex) Logistic Regression, SVM, 신경망
+
+- 이용 불가능 모델
+    - 트리 계열 모델
+        - 숫자 크기의 차이가 모델에 영향을 주지 않는다.
+        - ex) 의사결정나무, Random Forest
+
+![one_hot_encoding](../../../assets/img/playdata/05_machine_learning/04_02.png)
