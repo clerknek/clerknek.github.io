@@ -85,10 +85,36 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
         - 예) 나이, 무게, 거리, 소득
 
 - **각 데이터 별 Feature Type 설명**
-    - <span style='background-color:#fff5b1'>실수형 데이터</span>로 구성된 Feature는 *연속형 값*이다.
+    - **실수형 데이터**로 구성된 Feature는 *연속형 값*이다.
     - **문자열 데이터**로 구성된 Feature는 *단순 문자열값이거나 범주형 값*이다.
     - **정수형 데이터**로 구성된 Feature는 *범주형이거나 연속형 값*이다.
         - 몇개의 **고유값**으로 구성되었는지를 봐야 한다.
 
 
 
+
+## 범주형 Feature의 처리
+### Label Encoding
+- 범주형 Feature의 고유값들을 0부터 1씩 증가하는 값으로 변환
+- 이용 가능 모델
+    - 트리 계열 모델
+        - 숫자 크기의 차이가 모델에 영향을 주지 않는다.
+        - ex) 의사결정나무, Random Forest
+
+- 이용 불가능 모델
+    - 선형 계열 모델
+        - 숫자 크기의 차이가 모델에 영향을 준다.
+        - ex) Logistic Regression, SVM, 신경망
+
+![label_encoding](../../../assets/img/playdata/05_machine_learning/04_01.png)
+
+- sklearn.preprocessing.LabelEncoder 사용
+    - fit(): 어떻게 변환할 지 학습 `-> TV를 0으로 냉장고를 1로 하겠다.`
+    - transform(): 문자열를 숫자로 변환 `-> 실질적인 값 변환`
+    - fit_transform(): 학습과 변환을 한번에 처리
+    - inverse_transform():숫자를 문자열로 변환 `-> 0을 원래 값인 TV로 변환`
+    - classes_ : 인코딩한 클래스 조회 `-> 각각의 transform 결과 조회 주황색 표`
+        - `_`: 사이킷런에서 앞의 문자가 변수를 나타낸다는 것을 알려주기 위해 사용하는 방법
+
+    
+### One-Hot Encoding
