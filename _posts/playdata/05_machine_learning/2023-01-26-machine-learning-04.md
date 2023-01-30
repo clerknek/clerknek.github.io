@@ -202,9 +202,10 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 - Feature 값이 **평균 0, 표준편차 1** 범위에 있도록 변환
 
 $$
-New\,x_i = \cfrac{X_i-\mu}{\sigma}\\  
-\mu-평균,\;  \sigma-표준편차
+This formula $f(x) = x^2$ is an example.
 $$
+
+
 
 - 위 공식을 **z-score** 라고 부름
 - **sklearn.preprocessing.StandardScaler** 를 이용
