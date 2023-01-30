@@ -217,6 +217,9 @@ $$
 New\,x_i = \cfrac{x_i - min(X)}{max(X) - min(X)}
 $$
 
+
+> Scaling 같은 경우에는 특성들을 맞춰주는 것 뿐이지 결과 값이 아주 증가하는 것은 아니기 때문에 시간이 없을 때는 아무거나 사용해도 된다.
+
 ### feature scaling (모든 방식 동일)
 - scaler는 train set으로 학습(fit) 시킨다.
 - train, validation, test set은 **train set으로 학습한 scaler로 반환한다.** ==> validation, test set은 학습시키지 않는다.
