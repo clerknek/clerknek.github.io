@@ -186,3 +186,24 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 
 - Decision Tree는 정규화를 할 필요가 없다
     - Decision Tree는 한 column만 가지고 측정을 하는 것이기 때문에 분리를 잘하는 조건만 찾으면 된다.
+
+#### 메소드
+- fit(): 어떻게 변환할 지 학습
+    - Standard Scaling: 값들의 평균을 찾는 과정
+    - MinMax Scaling: 값들의 최대값, 최솟값을 찾는 과정
+    - 2차원 배열을 받으면 0축을 기준으로 학습한다. (DataFrame으로는 컬럼기준)
+- transform(): 변환
+    - 2차원 배열을 받으며 0축을 기준으로 변환한다. (DataFrame으로는 컬럼기준)
+- fit_transform(): 학습과 변환을 한번에 처리
+- inverse_transform(): 변환된 값을 원래값으로 복원
+
+
+### StandardScaler(표준화)
+- Feature 값이 **평균 0, 표준편차 1** 범위에 있도록 변환
+
+$$
+New\,x_i = \cfrac{X_i-\mu}{\sigma}\\
+\mu-평균,\;  \sigma-표준편차
+$$
+
+- **sklearn.preprocessing.StandardScaler** 를 이용
