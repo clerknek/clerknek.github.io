@@ -189,7 +189,7 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 
 #### 메소드
 - fit(): 어떻게 변환할 지 학습
-    - Standard Scaling: 값들의 평균을 찾는 과정
+    - Standard Scaling: 값들의 평균, 표준편차를 찾는 과정
     - MinMax Scaling: 값들의 최대값, 최솟값을 찾는 과정
     - 2차원 배열을 받으면 0축을 기준으로 학습한다. (DataFrame으로는 컬럼기준)
 - transform(): 변환
@@ -202,8 +202,9 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 - Feature 값이 **평균 0, 표준편차 1** 범위에 있도록 변환
 
 $$
-New\,x_i = \cfrac{X_i-\mu}{\sigma}\\
+New\,x_i = \cfrac{X_i-\mu}{\sigma}\\  
 \mu-평균,\;  \sigma-표준편차
 $$
 
+- 위 공식을 **z-score** 라고 부름
 - **sklearn.preprocessing.StandardScaler** 를 이용
