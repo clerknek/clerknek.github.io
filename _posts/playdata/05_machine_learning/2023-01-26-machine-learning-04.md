@@ -3,6 +3,7 @@ title: '[Machine Learning] 04. 데이터 전처리'
 date: 23-01-26 15:45:23 +0800
 categories: ['Data Analysis', '05. Machine Learning']
 tags: [python, machinelearning, preprocessing]     # TAG names should always be lowercase
+use_math: true
 ---
 
 ## Data Preprocessing
@@ -201,10 +202,12 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 ### StandardScaler(표준화)
 - Feature 값이 **평균 0, 표준편차 1** 범위에 있도록 변환  
 
-{% include embed/youtube.html id='H-B46URT4mg' %}
-
-
-
+This formula $f(x) = x^2$ is an example.
 
 - 위 공식을 **z-score** 라고 부름
 - **sklearn.preprocessing.StandardScaler** 를 이용
+
+### feature scaling (모든 방식 동일)
+- scaler는 train set으로 학습(fit) 시킨다.
+- train, validation, test set은 **train set으로 학습한 scaler로 반환한다.** ==> validation, test set은 학습시키지 않는다.
+    - 이유: 앞으로 모델이 예측할 새로운 데이터셋에 대한 정확한 평가를 위해서.
