@@ -170,10 +170,62 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 ### Feature Scaling(정규화)
 - 각 Feature들 간의 값의 범위(척도-Scale)가 다를 경우 이 값의 범위를 일정한 범위로 맞추는 작업  
 
-    꽃잎 길이 (cm) | 꽃받침 길이 (mm) | 꽃의 무게 (g)
-    ---|---|---
-    5|50|2
-    3|30|5
-    2|20|7
 
-    - `꽃잎의 길이`와 `꽃받침 길이`는 같은 값이지만 숫자 상으로는 `꽃받침 길이`가 훨씬 크다 -> 모두 큰 값을 가지고 있기 때문에 중요한 값으로 인식
+<head>
+    <style>
+        table {
+            width: 100%;
+            border-top: 1px solid #444444;
+            border-collapse:collapse;
+        }
+        th, td{
+            border-bottom: 1px solid #444444
+            padding: 10px
+            text-align: center;
+        }
+        thead tr{
+            background-color: #04B486;
+            color: #ffffff
+        }
+        tbody tr:nth-child(2n){
+            background-color: #CEF6CE;
+        } 
+        tbody tr:nth-child(2n+1){
+            background-color: #EFFBEF;
+        } 
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>꽃잎 길이 (cm)</td>
+                <td>꽃받침 길이 (mm)</td>
+                <td>꽃의 무게 (g)</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>50</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>30</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>10</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+</body>  
+
+
+
+
+    - `꽃잎의 길이`와 `꽃받침 길이`는 같은 값이지만 숫자 상으로는 `꽃받침 길이`가 훨씬 크다 -> 단위만 다르지만 값을 다르게 인식
+    - `꽃의 무게`는 단위 자체가 다르지만 동일한 기준으로 생각한다.
