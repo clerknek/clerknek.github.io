@@ -201,7 +201,7 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 ### StandardScaler(표준화)
 - Feature 값이 **평균 0, 표준편차 1** 범위에 있도록 변환  
 
-{% include embed/{youtube}.html id='{H-B46URT4mg}' %}
+{% include embed/youtube.html id='H-B46URT4mg' %}
 
 
 
