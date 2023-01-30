@@ -202,12 +202,23 @@ use_math: true
 ### StandardScaler(표준화)
 - Feature 값이 **평균 0, 표준편차 1** 범위에 있도록 변환  
 
-This formula $f(x) = x^2$ is an example.
+$$
+New\,x_i = \cfrac{X_i-\mu}{\sigma}\\
+\mu-평균,\;  \sigma-표준편차
+$$
 
 - 위 공식을 **z-score** 라고 부름
 - **sklearn.preprocessing.StandardScaler** 를 이용
+
+### MinMaxScaler
+- 데이터셋의 모든 값을 0(Min value)과 1(Max value) 사이의 값으로 변환한다.
+
+$$
+New\,x_i = \cfrac{x_i - min(X)}{max(X) - min(X)}
+$$
 
 ### feature scaling (모든 방식 동일)
 - scaler는 train set으로 학습(fit) 시킨다.
 - train, validation, test set은 **train set으로 학습한 scaler로 반환한다.** ==> validation, test set은 학습시키지 않는다.
     - 이유: 앞으로 모델이 예측할 새로운 데이터셋에 대한 정확한 평가를 위해서.
+
