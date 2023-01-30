@@ -165,3 +165,15 @@ tags: [python, machinelearning, preprocessing]     # TAG names should always be 
 - DecisionTree 계열의 알고리즘은 Feature에 0이 많은 경우(Sparse Matrix라고 한다.) 성능이 떨어지기 때문에 Label Encoding을 한다.
 
 
+## 연속형(수치형) 데이터 전처리
+- 연속형 데이터는 변수가 가지는 값들이 연속된 값인 경우로 보통 정해진 범위 안의 모든 실수가 값이 될 수 있다.
+### Feature Scaling(정규화)
+- 각 Feature들 간의 값의 범위(척도-Scale)가 다를 경우 이 값의 범위를 일정한 범위로 맞추는 작업  
+
+    꽃잎 길이 (cm) | 꽃받침 길이 (mm) | 꽃의 무게 (g)
+    ---|---|---
+    5|50|2
+    3|30|5
+    2|20|7
+
+    - `꽃잎의 길이`와 `꽃받침 길이`는 같은 값이지만 숫자 상으로는 `꽃받침 길이`가 훨씬 크다 -> 모두 큰 값을 가지고 있기 때문에 중요한 값으로 인식
