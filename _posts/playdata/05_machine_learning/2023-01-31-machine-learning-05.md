@@ -162,5 +162,5 @@ $$
 
 ![exthreshold](../../../assets/img/playdata/05_machine_learning/05_04.png)
 
-
+![precisionrecall](../../../assets/img/playdata/05_machine_learning/05_05.png)
 
