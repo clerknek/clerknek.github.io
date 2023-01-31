@@ -80,3 +80,39 @@ $$
 [[20, 6],
  [4, 40]]
 ```
+
+
+## 이진 분류 평가지표
+
+- **Accuracy (정확도)** 
+    - 전체 데이터 중에 맞게 예측한 것의 비율
+    - Accuracy(정확도)는 이진분류 뿐아니라 모든 분류의 기본 평가방식이다.
+    
+### 양성(Positive) 예측력 측정 평가지표
+
+- **Recall/Sensitivity(재현율/민감도)** 
+    - 실제 Positive(양성)인 것 중에 Positive(양성)로 예측 한 것의 비율
+    - **TPR**(True Positive Rate) 이라고도 한다.
+    - ex) 스팸 메일 중 스팸메일로 예측한 비율. 금융사기 데이터 중 사기로 예측한 비율
+- **Precision(정밀도)**
+    - Positive(양성)으로 예측 한 것 중 실제 Positive(양성)인 비율
+    - **PPV**(Positive Predictive Value) 라고도 한다.
+    - ex) 스팸메일로 예측한 것 중 스팸메일의 비율. 금융 사기로 예측한 것 중 금융사기인 것의 비율
+
+- **F1 점수**
+    - 정밀도와 재현율의 조화평균 점수
+    - recall과 precision이 비슷할 수록 높은 값을 가지게 된다. F1 score가 높다는 것은 recall과 precision이 한쪽으로 치우쳐저 있이 않고 둘다 좋다고 판단할 수 있는 근거가 된다.
+
+### 음성(Negative) 예측력 측정 평가지표
+- **Specificity(특이도)**
+    - 실제 Negative(음성)인 것들 중 Negative(음성)으로 맞게 예측 한 것의 비율
+    - **TNR**(True Negative Rate) 라고도 한다.
+
+- **Fall out(위양성률)**
+    - 실제 Negative(음성)인 것들 중 Positive(양성)으로 잘못 예측한 것의 비율. `1 - 특이도`
+    - **FPR** (False Positive Rate) 라고도 한다.
+    - $Fall Out(FPR) = \cfrac{FP}{TN+FP}$
+
+    ![metrix](../../../assets/img/playdata/05_machine_learning/05_02.png)
+
+    
