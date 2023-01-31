@@ -115,4 +115,43 @@ $$
 
     ![metrix](../../../assets/img/playdata/05_machine_learning/05_02.png)
 
-    
+
+## 각 평가 지표 계산 함수
+- sklearn.metrics 모듈
+- **confusion_matrix(y 실제값, y 예측값),  ConfusionMatrixDisplay(Confusion marix 시각화클래스)**
+    - 혼돈 행렬 반환
+    - plot confusion metrix 는 dupulicate 됨
+- **recall_score(y 실제값, y 예측값)**
+    - Recall(재현율) 점수 반환 (Positive 중 Positive로 예측한 비율 (TPR))
+- **precision_score(y 실제값, y 예측값)**
+    - Precision(정밀도) 점수 반환 (Positive로 예측한 것 중 Positive인 것의 비율 (PPV))
+- **f1_score(y 실제값, y 예측값)**
+    - F1 점수 반환 (recall과 precision의 조화 평균값)
+- **classification_report(y 실제값, y 예측값)**
+    - 클래스 별로 recall, precision, f1 점수와 accuracy를 종합해서 보여준다.
+
+## 이진 분류 내 재현율과 정밀도의 관계
+
+### 재현율이 더 중요한 경우
+- 정답이 '0'인 값들을 잘 찾아야 함 -> 0일 확률이 거의 100%일때만 선택
+- 실제 Positive 데이터를 Negative 로 잘못 판단하면 업무상 큰 영향이 있는 경우. 
+- FN(False Negative)를 낮추는데 촛점을 맞춘다.
+- 암환자 판정 모델, 보험사기적발 모델
+
+### 정밀도가 더 중요한 경우
+- 정답이 '1'인 값들을 잘 찾아야 함 -> 1일 확률이 거의 100%일때만 선택
+- 실제 Negative 데이터를 Positive 로 잘못 판단하면 업무상 큰 영향이 있는 경우.
+- FP(False Positive)를 낮추는데 초점을 맞춘다.
+- 스팸메일 판정
+
+## Threshold(임계값)
+- 모델이 분류 Label을 결정할 때 기준이 되는 확률 기준값.
+- 재현율과 정밀도 중 더 강조해야 하는 상황일 경우 임계값을 변경하여 평가 수치를 올린다.
+
+![treshold](../../../assets/img/playdata/05_machine_learning/05_03.png)
+
+## 후처리
+- 데이터가 문자일 경우 숫자형태로 전처리를 해주는 데 결과값으로 사용자에게 보여줄 때는 해당하는 문자 형태로 바꿔서 나타나게 된다.
+- predict()를 사용할 경우 (기본 임계점일때)
+    - 0이 0.01이고 1이 0.99이면 1로 나타내 준다.
+    - 0이 0.4이고 1이 0.6이어도 1로 나타내 준다.
