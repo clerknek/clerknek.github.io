@@ -174,3 +174,70 @@ $$
 ![precisionrecall](../../../assets/img/playdata/05_machine_learning/05_05.png)
 
 - 위 그래프에서 나타난 첫번째 점이 Precision은 높고 Recall은 낮기 때문에 Threshold 값이 가장 크다.
+
+## PR Curve와 AP Score
+- **PR Curve(Precision Recall Curve)**
+    - Positive 확률 0~1시이의 모든 입계값에 대하여 Recall과 Precision 의 변화 이용한 지표
+    - 히스토그램 형태로 그려진다. -> 나중에 AP Score를 편하게 계산하기 위해
+- **AP Score(Average Precision Score)**
+    - PR Curve의 선 면적을 계산한 값
+        - precision이 0~1, recall이 0~1의 값을 가지고 있기 때문에 AP Score는 0~1까지의 값으로 나타난다.
+        - 1에 가까울 수록 성능이 우수
+        - **양성클래스 탐지가 음성클래스 탐지의 중요도보다 높을 때 사용**(암환자 진단, Object Detection)
+
+
+![prcurve](../../../assets/img/playdata/05_machine_learning/05_06.png)
+
+- threshold 값을 바꾸면 precision 값을
+- AP Score 값이 높다 -> 양성에 대한 성능이 좋다
+    - threshold 값이 낮아질때 Precision 값이 떨어지지 않는 것
+
+### PR Curve, AP Score 기본 코드  
+```python
+precision_recall_curve(y값, Pos_예측확률) : FPR, TPR, Thresholds (임계치)
+average_precision_score(y값, Pos_예측확률) : AP 점수 반환
+```
+
+## ROC curve와 AUC score
+- **FPR(False Positive Rate-위양성율)**
+    - 위양성율 (fall-out)
+    - 1-특이도(TNR)
+    - 실제 음성중 양성으로 잘못 예측 한 비율
+
+    $$
+    \cfrac{FP}{TN+FP}
+    $$
+
+- **TPR(True Positive Rate-재현율/민감도)** 
+    - 재현율(recall)
+    - 실제 양성중 양성으로 맞게 예측한 비율
+
+    $$
+    \frac{TP}{FN+TP}
+    $$
+
+- FPR과 Recall은 **비례** 관계이다.
+
+- **ROC curve(Receiver Operating Characteristic Curve)**
+    - X축: FPR, Y축: TPR
+- **AUC score(Area Under the Curve)**
+    - ROC Curve 결과의 면적을 계산해서 점수화하는 함수
+    - TPR이 높고 FPR이 낮을 수록 성능이 우수
+        - FPR이 낮다 = Negative를 잘 분류했다.
+        - TPR이 크다 = Positive를 잘 분류했다.
+    - AUC 점수기준
+        - 1.0 ~ 0.9 : 아주 좋음
+        - 0.9 ~ 0.8 : 좋음
+        - 0.8 ~ 0.7 : 괜찮은 모델
+        - 0.7 ~ 0.6 : 의미는 있으나 좋은 모델은 아님
+        - 0.6 ~ 0.5 : 좋지 않은 모델
+        - 나머지: 찍는 것 만도 못하다.
+
+![roccurve](../../../assets/img/playdata/05_machine_learning/05_07.png)
+
+
+### ROC, AUC 점수 확인  
+```python
+roc_curve(y값, Pos_예측확률) : FPR, TPR, Thresholds (임계치)
+roc_auc_score(y값, Pos_예측확률) : AUC 점수 반환
+```
