@@ -15,7 +15,7 @@ use_math: true
 5. PR Curve, AP score
 6. ROC, AUC score
 
-- 정밀도, 재현률 F1 점수 -> Positive에 대한 평가 지표
+- 정밀도, 재현률 F1 점수 &rarr; Positive에 대한 평가 지표
 
 ### 회귀 평가방법
 1. MSE
@@ -30,8 +30,8 @@ use_math: true
 - 양성(Positive)-1: 모델이 찾으려는(추론하려는) 주 대상
 - 음성(Negative)-0: 모델이 찾으려는(추론하려는) 주 대상이 아닌 것
 >- 이진 분류와 다중 분류
->    - 개인지 고양이인지 찾는 분류 -> 다중분류
->    - 개인지 아닌지 찾는 분류 -> 이진분류
+>    - 개인지 고양이인지 찾는 분류 &rarr; 다중분류
+>    - 개인지 아닌지 찾는 분류 &rarr; 이진분류
 - 이진 분류 예시
     - 환자 분류
         - 양성 - 환자, 음성 - 정상인
@@ -64,7 +64,7 @@ $$
 - 실제 값(정답)과 예측 한 것을 표로 만든 평가표
     - 분류의 예측 결과가 몇개나 맞고 틀렸는지를 확인할 때 사용한다.
 - 함수: confusion_matrix(정답, 모델예측값)
-- 결과의 0번축(True, False): 실제 class, 1번 축(Positive, Negative): 예측 class -> Scikit learn 기준
+- 결과의 0번축(True, False): 실제 class, 1번 축(Positive, Negative): 예측 class &rarr; Scikit learn 기준
 
 ![Confusion Matrix](../../../assets/img/playdata/05_machine_learning/05_01.png)
 
@@ -144,14 +144,15 @@ $$
         - predict()를 사용할 경우 (기본 임계점일때)
             - 0이 0.01이고 1이 0.99이면 1로 나타내 준다.
             - 0이 0.4이고 1이 0.6이어도 1로 나타내 준다.
+
 ### Recall(재현율)/Sensitivity(민감도)가 더 중요한 경우
-- 정답이 Negative인 값들을 잘 찾아야 함 -> Negative일 확률이 거의 100%일때만 선택
+- 정답이 Negative인 값들을 잘 찾아야 함 &rarr; Negative일 확률이 거의 100%일때만 선택
 - 실제 Positive 데이터를 Negative 로 잘못 판단하면 업무상 큰 영향이 있는 경우. 
 - FN(False Negative)를 낮추는데 촛점을 맞춘다.
 - 암환자 판정 모델, 보험사기적발 모델
 
 ### Precision(정밀도)가 더 중요한 경우
-- 정답이 Positive인 값들을 잘 찾아야 함 -> Positive일 확률이 거의 100%일때만 선택
+- 정답이 Positive인 값들을 잘 찾아야 함 &rarr; Positive일 확률이 거의 100%일때만 선택
 - 실제 Negative 데이터를 Positive 로 잘못 판단하면 업무상 큰 영향이 있는 경우.
 - FP(False Positive)를 낮추는데 초점을 맞춘다.
 - 스팸메일 판정
@@ -163,9 +164,9 @@ $$
 ![threshold](../../../assets/img/playdata/05_machine_learning/05_03.png)
 
 - 임계값을 변화시켰을때 **정밀도와 재현율은 반비례 관계를 가진다.**
-- 임계값을 변화시켰을때 **FPR/Fall out(위양성률)과 재현율은 비례 관계를 가진다.** -> `1 - 특이도`
-    - 임계값을 높이면 정밀도는 **&uarr;** 재현율은 **&darr;**. -> 왠만하면 Negative
-    - 임계값을 낮추면 정밀도는 **&darr;** 재현율은 **&uarr;**. -> 왠만하면 Positive
+- 임계값을 변화시켰을때 **FPR/Fall out(위양성률)과 재현율은 비례 관계를 가진다.** &rarr; `1 - 특이도`
+    - 임계값을 높이면 정밀도는 **&uarr;** 재현율은 **&darr;**   &rarr;   왠만하면 Negative
+    - 임계값을 낮추면 정밀도는 **&darr;** 재현율은 **&uarr;**   &rarr;   왠만하면 Positive
 
 ![exthreshold](../../../assets/img/playdata/05_machine_learning/05_04.png)
 
@@ -178,7 +179,7 @@ $$
 ## PR Curve와 AP Score
 - **PR Curve(Precision Recall Curve)**
     - Positive 확률 0~1시이의 모든 입계값에 대하여 Recall과 Precision 의 변화 이용한 지표
-    - 히스토그램 형태로 그려진다. -> 나중에 AP Score를 편하게 계산하기 위해
+    - 히스토그램 형태로 그려진다. &rarr; 나중에 AP Score를 편하게 계산하기 위해
 - **AP Score(Average Precision Score)**
     - PR Curve의 선 면적을 계산한 값
         - precision이 0~1, recall이 0~1의 값을 가지고 있기 때문에 AP Score는 0~1까지의 값으로 나타난다.
@@ -198,7 +199,7 @@ average_precision_score(y값, Pos_예측확률) : AP 점수 반환
 ![prcurveex](../../../assets/img/playdata/05_machine_learning/05_06.png)
 
 - threshold 값을 바꾸면 precision 값을
-- AP Score 값이 높다 -> 양성에 대한 성능이 좋다
+- AP Score 값이 높다 &rarr; 양성에 대한 성능이 좋다
     - threshold 값이 낮아질때 Precision 값이 떨어지지 않는 것
 
 ## ROC curve와 AUC score
