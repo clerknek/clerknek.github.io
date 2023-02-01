@@ -185,18 +185,21 @@ $$
         - 1에 가까울 수록 성능이 우수
         - **양성클래스 탐지가 음성클래스 탐지의 중요도보다 높을 때 사용**(암환자 진단, Object Detection)
 
-
-![prcurve](../../../assets/img/playdata/05_machine_learning/05_06.png)
-
-- threshold 값을 바꾸면 precision 값을
-- AP Score 값이 높다 -> 양성에 대한 성능이 좋다
-    - threshold 값이 낮아질때 Precision 값이 떨어지지 않는 것
+![prcurve](../../../assets/img/playdata/05_machine_learning/05_08.png)
 
 ### PR Curve, AP Score 기본 코드  
 ```python
 precision_recall_curve(y값, Pos_예측확률) : FPR, TPR, Thresholds (임계치)
 average_precision_score(y값, Pos_예측확률) : AP 점수 반환
 ```
+
+- 그래프 예시
+
+![prcurveex](../../../assets/img/playdata/05_machine_learning/05_06.png)
+
+    - threshold 값을 바꾸면 precision 값을
+    - AP Score 값이 높다 -> 양성에 대한 성능이 좋다
+        - threshold 값이 낮아질때 Precision 값이 떨어지지 않는 것
 
 ## ROC curve와 AUC score
 - **FPR(False Positive Rate-위양성율)**
@@ -241,3 +244,8 @@ average_precision_score(y값, Pos_예측확률) : AP 점수 반환
 roc_curve(y값, Pos_예측확률) : FPR, TPR, Thresholds (임계치)
 roc_auc_score(y값, Pos_예측확률) : AUC 점수 반환
 ```
+
+- 그래프 예시
+
+![Alt text](../../../assets/img/playdata/05_machine_learning/05_09.png)
+
