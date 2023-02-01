@@ -247,5 +247,5 @@ roc_auc_score(y값, Pos_예측확률) : AUC 점수 반환
 
 - 그래프 예시
 
-![Alt text](../../../assets/img/playdata/05_machine_learning/05_09.png)
+![roccurveex](../../../assets/img/playdata/05_machine_learning/05_09.png)
 
