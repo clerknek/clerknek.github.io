@@ -197,9 +197,9 @@ average_precision_score(y값, Pos_예측확률) : AP 점수 반환
 
 ![prcurveex](../../../assets/img/playdata/05_machine_learning/05_06.png)
 
-    - threshold 값을 바꾸면 precision 값을
-    - AP Score 값이 높다 -> 양성에 대한 성능이 좋다
-        - threshold 값이 낮아질때 Precision 값이 떨어지지 않는 것
+- threshold 값을 바꾸면 precision 값을
+- AP Score 값이 높다 -> 양성에 대한 성능이 좋다
+    - threshold 값이 낮아질때 Precision 값이 떨어지지 않는 것
 
 ## ROC curve와 AUC score
 - **FPR(False Positive Rate-위양성율)**
