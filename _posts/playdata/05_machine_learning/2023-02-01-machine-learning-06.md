@@ -45,3 +45,14 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 - 단순한 모델이 만들어진다.
     - Train Set 성능 &darr;  and  Validation Set 성능 &darr;
     - Train Set에도 Validation Set에도 성능이 안좋은 모델
+
+## 규제 하이퍼파라미터
+- 주로 정수 값
+- 모델의 복잡도를 규제하는 hyper parameter
+    - Hyper Parameter
+        - 모델의 성능에 영향을 끼치는 파라미터 값으로 모델 생성시 사람이 직접 지정해 주는 값
+    - Hyper Parameter Tunning
+        - 모델의 성능을 가장 높일 수 있는 하이퍼파라미터를 찾는 작업
+    - Parameter
+        - 머신러닝에서 파라미터는 모델이 데이터 학습을 통해 직접 찾아야 하는 값을 말한다.
+
