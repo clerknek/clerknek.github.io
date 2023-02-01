@@ -29,13 +29,17 @@ use_math: true
 ## 이진 분류(Binary classification)의 양성(Positive)과 음성(Negative)
 - 양성(Positive)-1: 모델이 찾으려는(추론하려는) 주 대상
 - 음성(Negative)-0: 모델이 찾으려는(추론하려는) 주 대상이 아닌 것
-- 예
+> - 이진 분류와 다중 분류
+>     - 개인지 고양이인지 찾는 분류 -> 다중분류
+>     - 개인지 아닌지 찾는 분류 -> 이진분류
+- 이진 분류 예시
     - 환자 분류
         - 양성 - 환자, 음성 - 정상인
     - 스팸메일 분류
         - 양성 - 스팸메일, 음성 - 정상메일
     - 금융사기 모델
         - 양성 - 사기거래, 음성 - 정상거래
+
 
 ## 정확도 (Accuracy)
 - 대표적인 분류의 평가 지표
@@ -64,6 +68,8 @@ $$
 
 ![Confusion Matrix](../../../assets/img/playdata/05_machine_learning/05_01.png)
 
+>    - T/F: 맞은 지 아닌지
+>    - P/N: 예측한 값
 - **TP(True Positive)** 
     - 양성으로 예측했는데 맞은 개수
 - **TN(True Negative)** 
@@ -162,5 +168,8 @@ $$
 
 ![exthreshold](../../../assets/img/playdata/05_machine_learning/05_04.png)
 
+- 위 그래프를 확인하고 Recall 값과 Precision의 교차점을 기준으로 강조해야 하는 값이 잘 나올만한 Threshold를 정하면 된다.
+
 ![precisionrecall](../../../assets/img/playdata/05_machine_learning/05_05.png)
 
+- 위 그래프에서 나타난 첫번째 점이 Precision은 높고 Recall은 낮기 때문에 Threshold 값이 가장 크다.
