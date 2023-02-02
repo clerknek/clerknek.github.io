@@ -12,7 +12,8 @@ tags: [python, machinelearning, graphviz]     # TAG names should always be lower
 - 단순한 모델
 
 ### **Generalization (일반화)**
-- 모델이 새로운 데이터셋(테스트 데이터)에 대하여 정확히 예측하면 이것을 일반화 되었다고 말한다.
+- 모델이 새로운 데이터셋(Test data
+)에 대하여 정확히 예측하면 이것을 일반화 되었다고 말한다.
 - 모델이 훈련 데이터로 평가한 결과와 테스트 데이터로 평가한 결과의 차이가 거의 없고 좋은 평가지표를 보여준다.
 
 ### **Overfitting (과대적합)**
@@ -143,3 +144,78 @@ graph
     ```  
     - GridSeach와 동일한 방식으로 사용한다.
     - 모든 조합을 다 시도하지 않고 임의로 몇개의 조합만 테스트 한다.
+
+### GridSearchCV
+- <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html>
+- **Initializer 매개변수**
+    - **estimator:** 모델객체 지정
+    - **params :** 하이퍼파라미터 목록을 dictionary로 전달 '파라미터명':[파라미터값 list] 형식
+    - **scoring:** 평가 지표
+        - 평가지표문자열: <https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter>  
+        - 생략시 분류는 **accuracy**, 회귀는 **$R^2$** 를 기본 평가지표로 설정한다.
+        - 여러개일 경우 List로 묶어서 지정
+    - **refit:** best parameter를 정할 때 사용할 평가지표
+        - scoring에 여러개의 평가지표를 설정한 경우 refit을 반드시 설정해야 한다. (순위를 무엇으로 매길지)
+    - **cv:** 교차검증시 fold 개수.
+    - **n_jobs:** 사용할 CPU 코어 개수 (None:1(기본값), -1: 모든 코어 다 사용)
+
+- **메소드**
+    - **fit(X, y):** 학습
+    - **predict(X):** 분류-추론한 class. 회귀-추론한 값
+        - 제일 좋은 성능을 낸 모델로 predict()
+    - **predict_proba(X):** 분류문제에서 class별 확률을 반환
+        - 제일 좋은 성능을 낸 모델로 predict_proba() 호출
+
+- **결과 조회 속성**
+    - fit() 후에 호출 할 수 있다.
+    - **cv_results_:** 파라미터 조합별 평가 결과를 Dictionary로 반환한다.
+    - **best_params_:** 가장 좋은 성능을 낸 parameter 조합을 반환한다.
+    - **best_estimator_:** 가장 좋은 성능을 낸 모델을 반환한다.
+    - **best_score_:** 가장 좋은 점수 반환한다.
+
+
+### RandomizedSearchCV
+- <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html>
+
+- **Initializer 매개변수**
+    - **estimator:** 모델객체 지정
+    - **param_distributions:** 하이퍼파라미터 목록을 dictionary로 전달 '파라미터명':[파라미터값 list] 형식
+    - **<font color='red'>n_iter</font>:** 전체 조합중 몇개의 조합을 테스트 할지 개수 설정
+    - **scoring:** 평가 지표
+    - **refit:** best parameter를 정할 때 사용할 평가지표. Scoring에 여러개의 평가지표를 설정한 경우 설정.
+    - **cv:** 교차검증시 fold 개수. 
+    - **n_jobs:** 사용할 CPU 코어 개수 (None:1(기본값), -1: 모든 코어 다 사용)
+
+- **메소드**
+    - **fit(X, y):** 학습
+    - **predict(X):** 분류-추론한 class. 회귀-추론한 값
+        - 제일 좋은 성능을 낸 모델로 predict()
+    - **predict_proba(X):** 분류문제에서 class별 확률을 반환
+        - 제일 좋은 성능을 낸 모델로 predict_proba() 호출
+
+- **결과 조회 속성**
+    - fit() 후에 호출 할 수 있다.
+    - **cv_results_:** 파라미터 조합별 평가 결과를 Dictionary로 반환한다.
+    - **best_params_:** 가장 좋은 성능을 낸 parameter 조합을 반환한다.
+    - **best_estimator_:** 가장 좋은 성능을 낸 모델을 반환한다.
+    - **best_score_:** 가장 좋은 점수 반환한다.
+
+## Pipeline(파이프라인)
+### Pipeline이란?
+- 여러 단계의 머신러닝 프로세스 (전처리의 각 단계, 모델생성, 학습) 처리 과정을 설정하여 한번에 처리되도록 한다.
+- 파이프라인은 전처리를 진행하는 여러개의 Transformer(변환기)와 마지막에 Transformer 또는 Estimator(추정기)로 이루어져있다.
+- 전처리 작업 파이프라인
+    - Transformer로만 구성
+- 전체 프로세스 파이프 라인
+    - 마지막에 Estimator를 넣는다.
+### Pipeline 을 이용한 학습
+- pipeline.fit() 
+    - 각 순서대로 각 변환기의 fit_transform()이 실행되고 결과가 다음 단계로 전달된다. 마지막 단계에서는 fit()만 호출한다.
+    - 마지막이 추정기일때 사용
+- pipeline.fit_transform()
+    - fit()과 동일하나 마지막 단계에서도 fit_transform()이 실행된다.
+    - 전처리 작업 파이프라인(모든 단계가 변환기)일 때  사용
+- 마지막이 추정기(모델) 일 경우
+    - predict(X), predict_proba(X)
+    - 추정기를 이용해서 X에 대한 결과를 추론
+    - 모델 앞에 있는 변환기들을 이용해서 transform() 그 처리결과를 다음 단계로 전달

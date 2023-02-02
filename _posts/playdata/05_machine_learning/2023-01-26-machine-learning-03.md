@@ -13,7 +13,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 - **Validation 데이터셋 (검증 데이터셋)**
     - 모델의 성능 **중간 검증**을 위한 데이터셋
     - Test set과 Train set만 사용해서 `설정변경 -> 훈련 -> 평가`를 반복하게 되면 Test set에 모델이 맞춰지기 때문에 모델의 성능을 제대로 평가할 수 없게 된다.
-    - 따라서 데이터 셋을 Train set, Validation set, Test set으로 나눠 **Train set과 Validation set으로 모델을 최적화** 한뒤 마지막에 **Test set으로 최종 평가**한다.
+    - 따라서 데이터셋을 Train set, Validation set, Test set으로 나눠 **Train set과 Validation set으로 모델을 최적화** 한뒤 마지막에 **Test set으로 최종 평가**한다.
 
 - **Test 데이터셋 (평가 데이터셋)**
     - 모델의 **성능을 최종적으로 측정**하기 위한 데이터셋
@@ -33,7 +33,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
 
 
 ### 단점
-- train/validation/test 셋이 어떻게 나눠 지냐에 따라 결과가 달라진다.
+- train/validation/test set이 어떻게 나눠 지냐에 따라 결과가 달라진다.
 
 - 특히 데이터가 적을 경우 문제가 발생할 수 있다.
     - 이상치에 대한 영향을 많이 받는다.
