@@ -29,7 +29,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
         - 모든 모델은 모델의 복잡도를 변경할 수 있는 **규제와 관련된 하이퍼파라미터**를 제공하는데 이것을 조절한다.
 #### 결과
 - 복잡한 모델이 만들어진다.
-    - Train Set 성능 &uarr;  but  Validation Set 성능 &darr; &darr;
+    - Train Set 성능 **&uarr;**  but  Validation Set 성능 **&darr;&darr;**
     - Train Set에서는 성능이 좋지만 Validation Set에서는 Train Set에 비해 **너무** 성능이 안좋다.
     
 ### **Underfitting (과소적합)**
@@ -43,7 +43,7 @@ tags: [python, machinelearning]     # TAG names should always be lowercase
     - 모델이 제공하는 규제 하이퍼파라미터를 조절한다.
 #### 결과
 - 단순한 모델이 만들어진다.
-    - Train Set 성능 &darr;  and  Validation Set 성능 &darr;
+    - Train Set 성능 **&darr;**, Validation Set 성능 **&darr;**
     - Train Set에도 Validation Set에도 성능이 안좋은 모델
 
 ## 규제 하이퍼파라미터
