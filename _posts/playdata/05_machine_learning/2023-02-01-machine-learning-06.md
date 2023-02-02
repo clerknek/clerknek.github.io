@@ -121,3 +121,25 @@ graph
     - **max_depth**: 트리의 최대 깊이
     - **max_leaf_nodes** : 리프노드 개수
     - **min_samples_leaf** : leaf 노드가 되기위한 최소 샘플수 
+
+- 여러개의 하이퍼파라미터를 사용하게 된다면 경우의 수를 다 세야 되기 때문에 for문을 중첩해서 사용해야 한다.
+    - ex) `max_depth` 가 [1, 2, 3]이고 `max_leaf_nodes` 가 [5, 10]인 하이퍼 파라미터를 사용한다면 총 6(3X2)개를 테스트해서 비교해봐야 한다.
+    - 단순한 반복 작업이기 때문에 이미 함수가 만들어져 있다.(Grid Search)
+
+## Grid Search
+- 모델의 성능을 가장 높게 하는 최적의 하이퍼파라미터를 찾는 방법.
+- 하이퍼파라미터 후보들을 하나씩 입력해 모델의 성능이 가장 좋게 만드는 값을 찾는다.
+### 종류
+1. Grid Search 방식
+    ```python
+    sklearn.model_selection.GridSearchCV
+    ```  
+    - 시도해볼 하이퍼파라미터들을 지정하면 모든 조합에 대해 교차검증 후 제일 좋은 성능을 내는 하이퍼파라미터 조합을 찾아준다.
+    - 적은 수의 조합의 경우는 괜찮지만 시도할 하이퍼파라미터와 값들이 많아지면 너무 많은 시간이 걸린다.
+
+2. Random Search 방식
+    ```python
+    sklearn.model_selection.RandomizedSearchCV
+    ```  
+    - GridSeach와 동일한 방식으로 사용한다.
+    - 모든 조합을 다 시도하지 않고 임의로 몇개의 조합만 테스트 한다.
