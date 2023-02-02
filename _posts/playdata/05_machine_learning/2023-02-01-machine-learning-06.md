@@ -208,6 +208,7 @@ graph
     - Transformer로만 구성
 - 전체 프로세스 파이프 라인
     - 마지막에 Estimator를 넣는다.
+
 ### Pipeline 을 이용한 학습
 - pipeline.fit() 
     - 각 순서대로 각 변환기의 fit_transform()이 실행되고 결과가 다음 단계로 전달된다. 마지막 단계에서는 fit()만 호출한다.
@@ -219,3 +220,13 @@ graph
     - predict(X), predict_proba(X)
     - 추정기를 이용해서 X에 대한 결과를 추론
     - 모델 앞에 있는 변환기들을 이용해서 transform() 그 처리결과를 다음 단계로 전달
+
+### GridSearch에서 Pipeline 사용
+- 하이퍼파라미터 지정시 파이프라인 `프로세스이름__하이퍼파라미터` 형식으로 지정한다.
+1. Pipeline 생성
+2. GridSearchCV의 estimator에 pipeline 등록
+
+### make_pipeline() 함수를 이용한 파이프라인 생성을 편리하게 하기
+- make_pipeline(변환기객체, 변환기객체, ....., 추정기객체): Pipeline 
+- 프로세스의 이름을 프로세스클래스이름(소문자로변환)으로 해서 Pipeline을 생성.
+- GridSearch를 사용하지 않을 때 주로 사용
