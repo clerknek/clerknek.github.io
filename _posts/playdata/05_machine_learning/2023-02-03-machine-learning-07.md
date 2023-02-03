@@ -3,6 +3,7 @@ title: '[Machine Learning] 07. 지도학습'
 date: 23-02-03 15:19:43 +0800
 categories: ['Data Analysis', '05. Machine Learning']
 tags: [python, machinelearning, knn, svm]     # TAG names should always be lowercase
+use_math: true
 ---
 
 # KNN
@@ -36,7 +37,9 @@ tags: [python, machinelearning, knn, svm]     # TAG names should always be lower
     - n_neighbors는 Feature수의 제곱근 정도를 지정할 때 성능이 좋은 것으로 알려져 있다.
 - 거리 재는 방법 
     - p=2: 유클리디안 거리(Euclidean distance - 기본값 - L2 Norm)
+        - 제곱을 통해 거리계산 -> 대각선
     - p=1: 맨하탄 거리(Manhattan distance - L1 Norm)
+        - 일반 거리로 거리계산 -> 네모
 
 > ### 유클리디안 거리(Euclidean_distance)
 ![euclidean](../../../assets/img/playdata/05_machine_learning/07-02.png)
@@ -53,3 +56,4 @@ $$
 distance = |a_1 - b_1| + |a_2 - b_2| \\
 𝑛차원벡터간의거리= |a_1 - b_1| + |a_2 - b_2| + ... + |a_n - b_n|
 $$
+
