@@ -99,3 +99,46 @@ $$
     - **Support Vector**: 경계를 찾는데 기준이 되는 데이터포인트. 결정경계에 가장 가까이 있는 vector(데이터포인트)를 말한다.
     - **margin**: 두 support vector간의 너비
 - margin이 넓은 결정경계를 만드는 함수를 찾는 것.
+
+## 규제 - Hard Margin, Soft Margin
+- TrainSet에 Outlier(이상치)들이 있다면 데이터를 완벽하게 나눌 수는 없다 -> Overfitting
+- Margin을 나눌 때 Outlier를 얼마나 무시할 것인지에 따라 Hard margin과 soft margin으로 나뉜다.
+- Outlier들을 무시하게 된다면 좀 더 넓은 margin을 얻을 수 있다.
+
+### Hard margin
+- Outlier들을 무시하지 않고 Support Vector를 찾는다.
+- Margine이 Soft Margin에 비해 매우 좁다.
+- Overfitting이 발생할 수 있다.
+
+### Soft margin
+- 일부 Outlier들을 무시하고 Support Vector를 찾는다.
+- Margin의 거리가 넓다.
+- Underfitting이 발생할 수 있다.
+
+### Hyper Parameter C
+- Outlier 을 무시하는 비율을 설정하는 Hyper Parameter
+- 기본값 1
+- Parameter 값을 크게 주면 제약조건이 강해진다.
+    - Margin 값이 작아진다.
+    - 오류가 작아진다.
+    - Overfitting이 일어날 가능성이 크다.
+- Parameter 값을 작게 주면 제약조건이 약해진다.
+    - Margin 값이 커진다.
+    - Test data에서 성능이 안좋아지나 generalization(일반화)되어 테스트 데이터 성능이 올라간다.
+    - Overfitting이 일어날 가능성이 크다.
+### Linear SVM에서 C의 변화에 따른 성능변화 확인
+- overfitting: C의 값을 줄인다.
+- underfitting: C의 값을 늘린다.
+
+## Kernel SVM 
+- None Linear(비선형) SVM
+- 차원을 변경 해서 비선형 데이터셋을 선형으로 분리한다.
+
+{% include embed/youtube.html id='3liCbRZPrZA&t=42s' %}
+
+### Kernel trick(커널 트릭)
+- 비선형 데이터셋을 선형으로 분리하기 위해 차원을 변경해야 하는데 이때 사용하는 함수를 **Kernel**이라고 하고 차원을 변경하는 것을 **kernel trick** 이라고 한다.
+- 대표적인 kernel함수
+    - **Radial kernel**
+    - Polynomial kernel
+    - Sigmoid kernel
