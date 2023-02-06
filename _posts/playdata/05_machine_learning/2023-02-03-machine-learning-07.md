@@ -134,7 +134,7 @@ $$
 - None Linear(비선형) SVM
 - 차원을 변경 해서 비선형 데이터셋을 선형으로 분리한다.
 
-{% include embed/youtube.html id='3liCbRZPrZA&t=42s' %}
+{% include embed/youtube.html id='H-B46URT4mg' %}
 
 ### Kernel trick(커널 트릭)
 - 비선형 데이터셋을 선형으로 분리하기 위해 차원을 변경해야 하는데 이때 사용하는 함수를 **Kernel**이라고 하고 차원을 변경하는 것을 **kernel trick** 이라고 한다.
