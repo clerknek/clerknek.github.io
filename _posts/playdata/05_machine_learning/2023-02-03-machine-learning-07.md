@@ -134,11 +134,32 @@ $$
 - None Linear(비선형) SVM
 - 차원을 변경 해서 비선형 데이터셋을 선형으로 분리한다.
 
+
 {% include embed/youtube.html id='3liCbRZPrZA&t=42s' %}
+
 
 ### Kernel trick(커널 트릭)
 - 비선형 데이터셋을 선형으로 분리하기 위해 차원을 변경해야 하는데 이때 사용하는 함수를 **Kernel**이라고 하고 차원을 변경하는 것을 **kernel trick** 이라고 한다.
 - 대표적인 kernel함수
-    - **Radial kernel**
+    - **Radial kernel** - Default
     - Polynomial kernel
     - Sigmoid kernel
+
+### Non linear SVM 모델의 Hyper Parameter
+#### C
+- 오차 허용기준관련 규제.
+    - 기본 값은 1이며 클수록 규제를 강하게 하고 작을 수록 규제를 약하게 한다.
+#### gamma
+- Kernel함수 규제 값.
+    - 기본 값은 1이며 클수록 규제를 강하게 하고 작을 수록 규제를 약하게 한다.
+
+#### c와 gamma
+- C, gamma: 큰값: 복잡한 모델(강한 규제), 작은값 - 단순한 모델. (약한 규제)
+    - overfitting: C, gamma 값들을 감소
+    - undefitting: C, gamma 값들을 증가
+
+### SVC에서 predict_proba() 때 주의할 점
+- ROC AUC score, AP score
+    - 모델이 예측한 양성의 확률 ==> model.predict_proba(X)
+- SVC에서 predict_proba()는 호출이 기본적으로는 막혀있다.
+- 따라서 roc-auc score나 average precision score를 계산하기 위해서는 **SVC(probability=True)**해야 predict_proba()를 사용할 수 있다.
