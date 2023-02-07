@@ -135,7 +135,7 @@ $$
 - 차원을 변경 해서 비선형 데이터셋을 선형으로 분리한다.
 
 
-{% include embed/youtube.html id='3liCbRZPrZA&t=42s' %}
+{% include embed/youtube.html id='3liCbRZPrZA' %}
 
 
 ### Kernel trick(커널 트릭)

@@ -2,7 +2,7 @@
 title: '[Machine Learning] 08. Decision Tree'
 date: 23-02-06 14:12:39 +0800
 categories: ['Data Analysis', '05. Machine Learning']
-tags: [python, machinelearning,]     # TAG names should always be lowercase
+tags: [python, machinelearning]     # TAG names should always be lowercase
 use_math: true
 ---
 
