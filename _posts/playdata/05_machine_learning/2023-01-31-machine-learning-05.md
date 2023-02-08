@@ -1,13 +1,13 @@
 ---
-title: '[Machine Learning] 05. 분류 평가지표'
+title: '[Machine Learning] 05. Classification(분류)'
 date: 23-01-31 10:27:32 +0800
 categories: ['Data Analysis', '05. Machine Learning']
 tags: [python, machinelearning]     # TAG names should always be lowercase
 use_math: true
 ---
 
-# 분류와 회귀의 평가방법
-### 분류 평가 지표
+# Classification
+## 분류(Classification) 주요 평가 지표
 1. 정확도
 2. 정밀도
 3. 재현률
@@ -17,16 +17,11 @@ use_math: true
 
 - 정밀도, 재현률 F1 점수 &rarr; Positive에 대한 평가 지표
 
-### 회귀 평가방법
-1. MSE
-2. RMSE
-3. ${R^2}$
-
-### scikit-learn 평가함수 모듈
+## scikit-learn 평가함수 모듈
 - sklearn.metrics 모듈을 통해 제공
 
-# 분류(Classification) 평가 지표
-## 이진 분류(Binary classification)의 양성(Positive)과 음성(Negative)
+
+## 이진 분류(Binary classification)
 - 양성(Positive)-1: 모델이 찾으려는(추론하려는) 주 대상
 - 음성(Negative)-0: 모델이 찾으려는(추론하려는) 주 대상이 아닌 것
 >- 이진 분류와 다중 분류
