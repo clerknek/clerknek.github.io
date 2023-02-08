@@ -35,6 +35,24 @@ $$
 RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2}
 $$
 
+## $R^2$ (R square, 결정계수)
+- 결정계수는 회귀모델에서 Feature(독립변수)들이 Target(종속변수)를 얼마나 설명하는지를 나타내는 평가지표이다.
+    - 평균으로 예측했을 때 오차(총오차) 보다 모델을 사용했을 때 얼마 만큼 더 좋은 성능을 내는지를 비율로 나타낸 값으로 계산한다.
+    - 모델은 feature들을 이용해 값을 추론하므로 그 성능은 target에 대한 설명력으로 생각할 수 있다.
+- 1에 가까울 수록 좋은 모델.
+- scikit-learn 평가함수: r2_score()
+- 교차검증시 지정할 문자열: 'r2'
+- [참고](https://ko.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/assessing-the-fit-in-least-squares-regression/a/r-squared-intuition)
+
+$$
+R^2 = \cfrac{\sum_{i=1}^{n}(\hat{y_i}-\bar{y})^2}{\sum_{i=1}^{n}(y_i - \bar{y})^2}\\
+R^2 = 1 - \cfrac{\sum_{i=1}^{n}(y_i - \hat{y_i})^2}{\sum_{i=1}^{n}(y_i - \bar{y})^2}
+$$
+
+- $y_i$ : i번째 정답 값, 
+- $\hat{y_i}$ : i 번째 예측 값, 
+- $\bar{y}$ : y의 평균  
+
 
 ## 평가지표 비교
 - 대부분의 평가 지표 `ex) accuracy` 는 값이 클수록 좋은 평가를 얻는다
