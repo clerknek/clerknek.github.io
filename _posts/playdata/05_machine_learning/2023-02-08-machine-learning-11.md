@@ -37,7 +37,7 @@ $$
     - 파라미터 가중치를 기준으로는 일차식이 되어 선형모델이다. 파라미터(Coef, weight)들을 기준으로는 N차식이 되어 비선형 데이터를 추론할 수 있는 모델이 된다.
 - `PolynomialFeatures` Transformer를 사용해서 변환한다.
 
-- **단항 회귀 결과**
+- **단항 회귀 결과** **&rarr; Underfitting**
 ![linear regression](../../../assets/img/playdata/05_machine_learning/11-01.png)
 
 - 단항 회귀의 결과 값을 보면 특정 부분에서는 잘 예측하지만 다른 곳은 예측을 잘 하지 못하는 것을 볼 수 있다.
@@ -46,10 +46,12 @@ $$
 ![polynomial regression](../../../assets/img/playdata/05_machine_learning/11-02.png)
 
 - 두 결과 값의 차이
-![Alt text](../../../assets/img/playdata/05_machine_learning/11-03.png)
+
+    ![Alt text](../../../assets/img/playdata/05_machine_learning/11-03.png)
+
 
 - 대신 다항회귀에서 Feature 수가 너무 많으면, 즉 **degree를 너무 크게 하면 Overfitting** 문제가 생긴다
-- `degree=35`로 정의 했을 때 결과
+- `degree=35`로 정의 했을 때 결과 **&rarr; Overfitting**
 ![Alt text](../../../assets/img/playdata/05_machine_learning/11-05.png)
 
 - 좀더 가까이서 봤을 때
