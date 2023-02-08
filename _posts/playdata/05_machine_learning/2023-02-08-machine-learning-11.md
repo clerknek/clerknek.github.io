@@ -50,4 +50,7 @@ $$
 
 - 대신 다항회귀에서 Feature 수가 너무 많으면, 즉 **degree를 너무 크게 하면 Overfitting** 문제가 생긴다
 - `degree=35`로 정의 했을 때 결과
+![Alt text](../../../assets/img/playdata/05_machine_learning/11-05.png)
+
+- 좀더 가까이서 봤을 때
 ![Alt text](../../../assets/img/playdata/05_machine_learning/11-04.png)
