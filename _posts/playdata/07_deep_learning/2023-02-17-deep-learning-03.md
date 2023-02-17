@@ -156,7 +156,7 @@ use_math: true
 ### Hyperbolic tangent
 ![Alt text](../../../assets/img/playdata/07_deep_learning/03-05.png)
 
-- $$\large  tanh(z) = \cfrac{e^{z} - e^{-z}}{{e^{z} + e^{-z}}}$$
+- $$\large  tanh(z) = \cfrac{e^{z} - e^{-z}}{e^{z} + e^{-z}}$$
 - 출력값의 범위
     - $-1<tanh(z)<1$
 - Output이 0을 중심으로 분포하므로 sigmoid보다 학습에 효율적이다.
