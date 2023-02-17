@@ -1,7 +1,7 @@
 ---
 title: '[Deep Learning] 03. 신경망 구조'
 date: 23-02-17 10:39:40 +0800
-categories: ['Data Analysis', '06. Deep Learning']
+categories: ['Data Analysis', '07. Deep Learning']
 tags: [python, machinelearning, deeplearning, tensorflow, dnn, cnn, rnn]     # TAG names should always be lowercase
 use_math: true
 ---

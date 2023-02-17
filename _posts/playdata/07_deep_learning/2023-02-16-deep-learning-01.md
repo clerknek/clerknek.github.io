@@ -1,7 +1,7 @@
 ---
 title: '[Deep Learning] 01. 딥러닝 개요'
 date: 23-02-16 09:20:31 +0800
-categories: ['Data Analysis', '06. Deep Learning']
+categories: ['Data Analysis', '07. Deep Learning']
 tags: [python, machinelearning, deeplearning, tensorflow]     # TAG names should always be lowercase
 ---
 
