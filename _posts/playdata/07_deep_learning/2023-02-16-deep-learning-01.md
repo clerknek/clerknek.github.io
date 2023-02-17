@@ -19,6 +19,17 @@ tags: [python, machinelearning, deeplearning, tensorflow]     # TAG names should
     - 사람이 찾기 힘든 데이터를 처리한다.
     - 영상, 자연어, 번역
 
+## 딥러닝의 특징
+### 전통적 기계학습(Machine learning) Process
+![Alt text](../../../assets/img/playdata/07_deep_learning/01-03.png)
+
+> - 특성 추출을 사람이 해야함
+
+### 딥러닝(Deep Learning) Process
+![Alt text](../../../assets/img/playdata/07_deep_learning/01-04.png)
+
+> - 특성 추출까지 해줌
+
 ## 딥러닝 프로세스
 
 - **학습단계**
