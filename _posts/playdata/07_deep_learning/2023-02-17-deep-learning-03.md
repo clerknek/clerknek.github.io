@@ -374,14 +374,34 @@ $$
 ## 파라미터 업데이트 단위
 
 - **Batch Gradient Decent (배치 경사하강법)**
-    - Loss를 계산할 때 전체 학습데이터를 사용해 그 평균값을 기반으로 파라미터를 최적화한다.
-    - 많은 계산량이 필요해서 속도가 느리다. 학습 데이터가 클 경우 메모리가 부족할 수 있다.
+    - Loss를 계산할 때 **전체 학습데이터**를 사용해 그 평균값을 기반으로 파라미터를 최적화한다.
+    - 장점
+        - 이상치에 강하다
+    - 단점
+        - 계산량 &uarr;
+        - 메모리 부족
 
-- **Mini Batch Stochastic Gradient Decent (미니배치 확률적 경사하강법)**
+- **Stochastic Gradient Decent (확률적 경사하강법)**
+    - Loss를 계산할 때 **1개의 학습데이터**를 사용해 파라미터를 최적화한다.
+    - 장점
+        - 계산이 빠르다
+    - 단점
+        - 이상치에 취약
+        - 학습이 불완전 &rarr; 운적인 요소가 많음
+
+- **Mini Batch (Stochastic Gradient Decent)**
     - Loss를 계산할 때 전체 데이터를 다 사용하지 않고 지정한 데이터 양(batch size) 만큼 마다 계산해 파라미터를 업데이트 한다.
-    - 계산은 빠른 장점이 있지만 최적값을 찾아 가는 방향이 불안정 하여 부정확 하다. 그러나 반복 횟수를 늘리면 Batch 방식과 유사한 결과로 수렴한다.
+        - batch size는 최대한 크게 주는 것이 좋다. &rarr; 학습이 안정해진다.
+    - Batch Gradient Decent, Mini Batch의 장점을 합친 방식
+    - 요즘 Stochastic Gradient Decent은 보통 mini batch를 의미한다.
+
 
 > **스텝(Step)**:  한번 파라미터를 업데이트하는 단위
+
+### epoch과 step의 차이
+- 6만개, epoch = 10, batch_size = 1000 &rarr; 60 steps
+
+
 ![Alt text](../../../assets/img/playdata/07_deep_learning/03-17.png)
 
 ## SGD를 기반으로 한 주요 옵티마이저
