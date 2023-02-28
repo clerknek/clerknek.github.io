@@ -127,7 +127,7 @@ use_math: true
 4. 
 ![Alt text](../../../assets/img/playdata/07_deep_learning/06-08.png)
 
-이미지 참조: <https://untitledtblog.tistory.com/150>
+- 이미지 참조: <https://untitledtblog.tistory.com/150>
 
-![Alt text](../../../assets/img/avatar.png)
+![Alt text](../../../assets/img/playdata/07_deep_learning/06-09.gif)
 
