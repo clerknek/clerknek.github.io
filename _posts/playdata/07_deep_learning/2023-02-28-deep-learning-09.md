@@ -125,3 +125,62 @@ use_math: true
     - **non_trainable_weights:** Train(학습)시 업데이트 되지 않는(훈련되지 않는) weights들 리스트
 - Layer와 Model은 boolean 값을 가지는 속성 **`trainable`**을 제공
     - trainable을 **False로** 설정하면 Layer의 weights들이 훈련가능에서 **훈련 불가능** 상태로 변경된다. 이런 상태를 **Frozen-동결** 이라고 하며 학습시 weight들이 업데이트 되지 않는다.
+
+
+# 주요 CNN 모델
+![Alt text](../../../assets/img/playdata/07_deep_learning/09-06.png)
+
+## VGGNet(VGG16)
+- VGG(Visual Geometry Group)
+- 배경
+    - 네트워크 깊이가 어떤 영향을 주는 지 연구하기 위해 설계된 네트워크 중 16 layer 가 가장 성능이 좋아서 만들어짐
+- 설명
+    - Filter의 수를 64, 128, 256, 512 두 배씩 키움.
+    - 네트워크의 깊이를 연구하기 위해 만들어진 모델이라 다 같은 layer를 사용했다.
+        - 모든 layer들에 **3 X 3 filter, stride=1, same padding의 Convolution Layer**와 **$2\times 2$, stride=2의 MaxPooling** 사용
+- 단점
+    - VGG16의 단점은 마지막에 분류를 위해 Fully Connected Layer 3개를 붙여 파라미터 수가 너무 많아 졌다. 
+    - 약 1억4천만 개의 parameter(가중치)중 1억 2천만개 정도가 Fully Connected Layer의 파라미터 임.
+    - GPU를 사용할 정도로 시간이 오래 걸린다.
+
+- 구조
+![Alt text](../../../assets/img/playdata/07_deep_learning/09-07.png)
+
+
+## ResNet
+- ResNet(Residual Network)
+- 배경
+    - 2015년 마이크로소프트 리서치 팀에서 제안한 신경망구조로 잔차모듈(Residual module) 과 skip connection 이라는 구조가 사용됨
+- 설명
+    - **Skip connection(Shortcut connection)기법을 이용해 Layer수를 획기적으로 늘린 CNN 모델**
+    - 입력값을 그대로 출력하는 identity block 을 사용하면 성능이 떨어지지는 않는다.
+    - 그럼 Convloution block을 identity block으로 만들면 최소한 성능은 떨어지지 않고 깊은 Layer를 쌓을 수 있지 않을까?
+
+- 구조
+    ![Alt text](../../../assets/img/playdata/07_deep_learning/09-08.png)
+
+    - Residual block들을 쌓는 구조
+        - 일반 Convolution Layer(backbone)을 먼저 쌓고 Identity(Residual) block들을 계속 쌓는다.
+    - 모든 Identity block은 두개의 3X3 conv layer로 구성됨.
+    - 일정 레이어 수별로 filter의 개수를 두배로 증가시키며 stride를 2로 하여 downsampling 함. (Pooling Layer는 Identity block의 시작과 마지막에만 적용)
+
+## MobileNet
+- 배경
+    - 저성능 컴퓨팅 환경에서 실행할 수 있도록 하기 위해 딥러닝 네트워크를 가볍게 구성하는 (경량 네트워크-Small Deep Neural Network) 방법에 대한 연구가 활성화 되었다.
+    - 저성능 환경에서 실행되기 위한 사항
+        - 적은 연산량(낮은 계산의 복잡도)을 통한 빠른 실행
+        - 작은 모델 크기
+        - 충분히 납득할 만한 정확도
+        - 저전력 사용
+    - 즉 기존의 성능만을 신경쓴 모델 보다 **적은 연산량으로 빠르게 추론할 수 있으되 납득할 수 있는 성능을 내야 한다.**
+- 설명
+    - Channel Reduction, Distillation & Compression, Depthwise Seperable Convolution을 적용하여 경량 네트워크를 구현한 모델
+        - Channel Reduction
+            - Channel의 개수를 줄인다.
+        - Distillation & Compression
+            - Distillation
+                - 큰 모델(Teacher Model)이 미리 학습한 정보(Knowledge)를 작은 모델에 전달하여 성능을 향상시키는 기법.
+            - Compression
+                - 모델 가지치기(Model Pruning-중요도가 떨어지는 파라미터를 0으로해 크기를 줄인다.)등의 기법들을 이용해 네트워크기 크기를 줄이는 기법.
+        - Depthwise Seperable Convolution
+            - Depthwise Convolution과 Pointwise Convolution Layer를 연결한 모델을 구성하여 연산량을 줄인다.
