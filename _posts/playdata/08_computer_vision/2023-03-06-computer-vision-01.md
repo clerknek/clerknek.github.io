@@ -20,7 +20,7 @@ use_math: true
     - Object Detection 처럼 물체를 찾기는 하지만 픽셀 단위로 찾는다.
     - 픽셀 단위로 찾아야 하기 때문에 많은 좌표가 필요함
 
-![Alt text](../../../assets/img/playdata/08_vision/01-01.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-01.png)
 
 ## Object Detection 개요
 ### Object Detection = Localization + Classification
@@ -56,7 +56,7 @@ use_math: true
     1. Bounding Box안의 물체의 class 별 확률
     2. **Confidence score**
         - Bounding Box 안에 찾으려는 Object(물체)가 있을 확률값으로 0.0 ~ 1.0 사이의 값
-![Alt text](../../../assets/img/playdata/08_vision/01-02.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-02.png)
 
 - Object Detection 은 하나의 이미지안에서 N개의 Object를 검출해 내야 한다. 그런데 몇개를 찾을지는 입력 이미지마다 다르다.  그래서 한 이미지에 찾으려는 **Object가 있을 최대의 개수를 정하고** 모델은 무조건 그 개수만큼 bounding box(위치+분류)를 추론(출력)하도록 한다. 추론한 결과에서 **후처리를 통해 최종 추론결과**를 낸다.
 - 위와 같은 이유로 bounding box마다 box안에 물체가 있을 확률(confidence score)을 모델이 찾도록 하여 낮은 확률의 box는 후처리에서 제거한다.
@@ -72,11 +72,11 @@ use_math: true
 - 예시
     - Train(학습) 시 모델이 예측한 bounding box와 ground truth(정답) bounding box가 얼마나 겹치는지 확인하는 지표로 사용.
     - 모델이 추론한 결과에서 하나의 object에 대해 여러개 bounding box가 나오면 그중 하나만 선택할 때 사용.(NMS)
-![Alt text](../../../assets/img/playdata/08_vision/01-03.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-03.png)
 
 $$\cfrac{두\,영역의\,교집합\,영역}{두\,영역의\,합집합\,영역}$$
 
-![Alt text](../../../assets/img/playdata/08_vision/01-04.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-04.png)
 
 ### mAP (mean Average Precision)
 - 여러개의 실제 Object가 검출된 재현율(Recall)의 변화에 따른 정밀도(Precision) 값을 평균화 한 것
@@ -97,14 +97,14 @@ $$
 \cfrac{TP}{All\,Ground\,Truth}
 $$
 
-![Alt text](../../../assets/img/playdata/08_vision/01-05.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-05.png)
 
 위의 그림을 보면 두마리 새 중 한마리만 Detect 했다.
 - 1개를 예측해서 1개 맞았으므로 Precision은 100%(1.0)가 된다.
 - 새는 두 마리인데 하나만 Detect(검출) 했으므로 Recall은 50%(0.5)가 된다.
 
 #### Object Detection에서 TP, FP, FN
-![Alt text](../../../assets/img/playdata/08_vision/01-06.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-06.png)
 
 - **FP(False Positive)**
     1. 다른 class로 예측한경우. 
@@ -120,7 +120,7 @@ $$
 - **confidence threshold를 낮게** 잡으면 precision은 낮게 recall은 높게 나온다.
 - **confidence threshold를 높게** 잡으면 precision은 높게 recall은 낮게 나온다.
 - Precision과 Recall은 이렇게 반비례 관계를 가지기 때문에 Precision과 Recall의 성능 변화 전체를 확인해야 한다 &rarr;**precision-recall curve**
-![Alt text](../../../assets/img/playdata/08_vision/01-07.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-07.png)
 
 #### Precision-Recall curve
 - confidence threshold의 변화에 따라 recall과 precision의 값이 변화게 된다.  
@@ -133,7 +133,7 @@ $$
 - Average precision은 **0 ~ 1사이**의 값을 가지며 1에 가까울 수록 좋은 성능을 나타낸다. 
 - Average Precision을 계산은 Precision-recall curve의 선을 단조적으로 감소하는 그래프로 바꾼 뒤 면적을 계산한다.
 
-![Alt text](../../../assets/img/playdata/08_vision/01-08.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-08.png)
 
 <center> Blue: Precision-Recall curve, Red: Average Precision </center>
 
@@ -145,7 +145,7 @@ $$
     - Non Max Suppression
     - Detect(검출)된 bbox(Bounding Box)들 중에서 비슷한 위치에 있는 겹치는 bbox들을 제거하고 가장 적합한 bbox를 선택하는 방법
 
-![Alt text](../../../assets/img/playdata/08_vision/01-09.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-09.png)
 
 ### 실행 로직
 1. Detect(검출)된 Bounding Box 중 Confidence score가 Confidence threshold (신뢰 임계값: Hyper Parameter) 이하의 박스들을 제거한다.
@@ -161,6 +161,6 @@ $$
 - 겹치는 bbox의 경우 confidence score가 낮은 것을 제거하지 않고 confidence score를 줄여서 남기는 방식
 - [논문](https://arxiv.org/pdf/1704.04503.pdf)
 
-![Alt text](../../../assets/img/playdata/08_vision/01-10.png)
+![Alt text](../../../assets/img/playdata/08_computer_vision/01-10.png)
 
 - 위의 그림의 경우 좌우 사이드에 있는 말의 confidence를 0.4로 줄인다. (hard는 제거)
