@@ -9,7 +9,7 @@ use_math: true
 # 데이터 수집
 ## PASCAL VOC(Visual Object Classes)
 
-- http://host.robots.ox.ac.uk/pascal/VOC/
+- <http://host.robots.ox.ac.uk/pascal/VOC/>
 - 2005년에서 2012년까지 열렸던 VOC challenges 대회에서 사용한 데이터셋으로 각 대회별 데이터셋을 Open Dataset으로 제공한다.
     - 이 중 2007년도와 2012년도 이미지가 많이 쓰인다.
     - [PASCAL VOC 2007 대회 메인페이지](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/index.html)
@@ -21,8 +21,8 @@ use_math: true
 
 ## MS-COCO Dataset
 - COCO (Common Objects in Context) Dataset은 object detection, segmentation, keypoint detection 등을 위한 데이터셋으로 고해상도의 33만장의 이미지와 20만개 이상의 Label을 제공한다.
-- https://cocodataset.org/
-- https://arxiv.org/pdf/1405.0312.pdf
+- <https://cocodataset.org/>
+- <https://arxiv.org/pdf/1405.0312.pdf>
 - 연도별로 데이터 셋을 제공한다.
 - 데이터셋을 불러오고 사용하는 것을 도와주는 pycocotools 라이브러리를 제공한다.
 
@@ -30,16 +30,16 @@ use_math: true
 
 - Open Image Dataset
     - 구글에서 공개하는 Image Data로 현존 최대 규모 범용 이미지 데이터이다. V5 기준 600개 category에 약 9천만장의 데이터셋을 제공.
-    - https://storage.googleapis.com/openimages/web/index.html
-    - https://github.com/cvdfoundation/open-images-dataset
+    - <https://storage.googleapis.com/openimages/web/index.html>
+    - <https://github.com/cvdfoundation/open-images-dataset>
 
 - KITTI
     - 차 주행관련 데이터셋을 제공한다.
-    - http://www.cvlibs.net/datasets/kitti/
+    - <http://www.cvlibs.net/datasets/kitti/>
 
 - AIHub
     - 과학기술정보통신부와 한국정보화진흥원(NIA)에 주관하는 곳으로 이미지, 텍스트, 법률, 농업, 영상, 음성 등 다양한 분야의 딥러닝 학습에 필요한 데이터를 수집 구축하고 이를 AI-Hub 를 통해 공개하고 있다. 
-    - https://aihub.or.kr/
+    - <https://aihub.or.kr/>
 - 이외에도 다양한 단체(기업, 연구소)들에서 데이터셋을 제공한다.    
 
 
@@ -65,14 +65,14 @@ for kw in keywords:
 
 ## 크롬브라우저 확장
 - Image Downloader
-    - https://chrome.google.com/webstore/detail/image-downloader/cnpniohnfphhjihaiiggeabnkjhpaldj/related
+    - <https://chrome.google.com/webstore/detail/image-downloader/cnpniohnfphhjihaiiggeabnkjhpaldj/related>
 
 ## 영상 무료 제공 사이트
 
 다음 사이트들은 영상에 저작권 없이 무료로 다운 받아 사용할 수 있는 사이트들
-- pixcels: https://www.pexels.com/
-- pixabay: https://pixabay.com/ko/
-- Unsplash: https://unsplash.com/
+- pixcels: <https://www.pexels.com/>
+- pixabay: <https://pixabay.com/ko/>
+- Unsplash: <https://unsplash.com/>
 
 
 # Labeling 과 Annotation 파일 생성
