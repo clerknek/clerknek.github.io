@@ -24,7 +24,7 @@ use_math: true
 
 ## Object Detection 개요
 ### Object Detection = Localization + Classification
-- **Object Detection**은 영상에 존재하는 Object(물체)들을 Bounding Box를 이용해 **위치를 찾아내고(Localization)** **class를 분류(Classification)**하는 작업이다
+- **Object Detection**은 영상에 존재하는 Object(물체)들을 Bounding Box를 이용해 **위치를 찾아내고(Localization-Regression 사용)** **class를 분류(Classification)**하는 작업이다
 - 사진 속에서 찾는 정답이 1개인 Image Classification과는 달리 Object Detection은 정답의 개수가 정해져 있지 않기 때문에 찾기 힘들다
     - 사진 속에 있는 물체의 최대값을 정해 높는다.
 - **Object Detection방식**
@@ -40,9 +40,10 @@ use_math: true
     - Bounding Box의 위치값은 4개로 구성되어 있는데 각 값이 가리키는 것은 모델마다 다르다. 대부분 아래 3가지 경우중 하나이다.
     - x좌표, y좌표, width, height 로 구성
         - x좌표, y좌표
-            1. Bounding Box 중심점의 좌표
+            1. **Bounding Box 중심점의 좌표** &rarr; 주로 이 방식을 사용한다.
             2. Bounding Box 좌상단 좌표
-        - width, height: Bounding Box 의 너비(width)와 높이(height)
+        - width, height: Bounding Box 의 너비(width)와 높이(height)  
+        
     3. x_min, y_min, x_max, y_max를 이용
         - x_min, y_min: 좌상단(Left-Top)의 x, y 좌표
         - x_max, y_max: 우하단(right-bottom)의 x, y 좌표
