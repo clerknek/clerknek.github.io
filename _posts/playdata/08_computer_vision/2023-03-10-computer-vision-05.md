@@ -1,6 +1,6 @@
 ---
 title: '[Computer Vision] 05. Yolov8 Object Detection'
-date: 23-03-09 15:52:20 +0800
+date: 23-03-10 15:52:20 +0800
 categories: ['Data Analysis', '08. Computer Vision']
 tags: [python, machinelearning, deeplearning, tensorflow, yolo]     # TAG names should always be lowercase
 use_math: true
