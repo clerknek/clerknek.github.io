@@ -37,7 +37,7 @@ st.write('일반 글 2')
 ## 시작
 1. 올리고 싶은 파이썬 파일을 올리고 싶은 경로로 들어간다
 2. `start streamlit run {파이썬 파일}` 입력한다.
-    - 실행 종료가 잘 안되기 때문에 `start`를 입력해서 새로운 cmd를 연다
+- 실행 종료가 잘 안되기 때문에 `start`를 입력해서 새로운 cmd를 연다
 3. 새로운 창에서 `Email:` 부분에 아무것도 치지 않고 `Enter를 입력한다`
 ![Alt text](../../assets/img/streamlit/01.png)
 
