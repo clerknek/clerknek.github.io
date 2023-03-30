@@ -38,27 +38,27 @@ Github Page를 만들기 위해 우선 [Github 사이트](https://github.com/)�
 ## Github Page 만들기
 <https://github.com/cotes2020/chirpy-starter/generate>
 1. 위 링크로 들어가셔서 아래 사진 ① 부분에 `(자신의 깃허브 닉네임).github.io`를 입력하고 ②에 체크한 후 ③에 있는 버튼을 눌러 repository를 생성합니다.
->![chirpy-tutorial_01_01](/images/githubpage/chirpy-tutorial_01_01.jpg)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_01.jpg)
 
 2. 새롭게 생성된 repository에 들어가면 이런 파일들이 있는데 그 중 `_config.yml`파일에 들어갑니다.
->![chirpy-tutorial_01_02](/images/githubpage/chirpy-tutorial_01_02.png)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_02.png)
 
 3. Github Page url을 설정해주기 위해 `_config.yml`파일 상단에 위치한 편집 버튼을 누릅니다.
->![chirpy-tutorial_01_03](/images/githubpage/chirpy-tutorial_01_03.png)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_03.png)
 
 4. `yml`파일을 내리다 보면 `url: ''` 부분이 있는 데 그 부분을 `https://(1번에서 생성한 repository 이름)`을 입력한 후 스크롤을 마지막까지 내려 파일을 저장합니다. 
 입력 예시) `url: 'https://clerknek.github.io'`
->![chirpy-tutorial_01_04](/images/githubpage/chirpy-tutorial_01_04.png)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_04.png)
 
 5. repository 상단에 위치한 **Actions** 탭에 들어가셔서 **workflow**가 초록색 체크 표시가 뜰 때까지 기다려 줍니다.
->![chirpy-tutorial_01_05](/images/githubpage/chirpy-tutorial_01_05.png)
->![chirpy-tutorial_01_06](/images/githubpage/chirpy-tutorial_01_06.png)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_05.png)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_06.png)
 
 6. **workflow**에서 체크 표시가 뜨면 ① Github 상단에 위치한 **Settings**탭에 들어가신 후 ② Page 탭에 들어가 ③ **Source**를 **Github Actions**로 바꿉니다. 
->![chirpy-tutorial_01_07](/images/githubpage/chirpy-tutorial_01_07.png)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_07.png)
 
 7. 6번을 다 끝내고 6번 사진의 ④ **Visit site** 버튼을 눌러주면 아래와 같이 chirpy 테마가 적용된 여러분의 Github Page를 확인하실 수 있습니다.
->![chirpy-tutorial_01_08](/images/githubpage/chirpy-tutorial_01_08.png)
+>![Alt text](../../assets/img/githubpage/chirpy-tutorial_01_08.png)
 
 ## 마치며
 이번 포스팅에서는 Jekyll에 chirpy 테마를 이용해 간단하게 Github Page를 만들어 보았습니다. 저도 아직 Github Page를 많이 써보지 않았지만 간단하게 그 이후 사용법을 설명 드리자면 다음과 같습니다.
