@@ -9,13 +9,11 @@ use_math: true
 # Segmentation 개요
 
 - Segmentation(세분화)란 이미지에서 관심객체를 픽셀단위로 추출하는 것을 말한다. 관심객체가 이미지 어디에 있는 위치 뿐아니라 그 객체의 모양을 추출하고자 할때 방식이다.
-- 딥러닝의 발전과 함께 많은 성능향상이 이뤄진 분야 이다.
+- 딥러닝의 발전과 함께 많은 성능향상이 이뤄진 분야이다.
 ![Alt text](../../../assets/img/playdata/08_computer_vision/06-01.png)
 
-- 실질적으로 컴퓨터가 모델을 뽑아낼 경우
+- [실질적으로 컴퓨터가 모델을 뽑아낼 경우](https://www.jeremyjordan.me/semantic-segmentation/)
 ![Alt text](../../../assets/img/playdata/08_computer_vision/06-02.png)
-
-<출처>: <https://www.jeremyjordan.me/semantic-segmentation/>
 
 # Segmentation 종류  
 
@@ -32,7 +30,6 @@ use_math: true
 - 이미지내의 모든 픽셀에 대해 클래스별 예측을 하고 각각의 instance 별로 구분하여 추론한다.
 
 # 주요 모델
-
 ## Fully Convolution Networks for Semantic Segmentation(FCN)
 - 2015년 CVPR 학회에서 발표된 모델
 - 당시 이미지 분류에 좋은 성능을 보이던 CNN 모델을 segmentation 업무에 적용시키려함.
@@ -59,11 +56,11 @@ use_math: true
 - Segmentation을 위해 size가 작아진 Feature map을 다시 Input image의 size로 키움.
 - Upsampling  방식으로 Bilinear Interpolation 방식과 Transpose Convolution 방식을 사용함.
 
-    - <b style='font-size:1.2em'>[Bilinear Interpolation](https://darkpgmr.tistory.com/117) </b>  
+    - [Bilinear Interpolation](https://darkpgmr.tistory.com/117)
         - 1차원 구조의 보간법인 Linear interpotation을 2차원으로 확장한 방식    
         - size를 키우면서 생긴 공간을 계산식을 이용해 채워넣는다. 
 
-    - <b style='font-size:1.2em'>Transpose Convolution</b>
+    - Transpose Convolution
         - convolution 연산으로 size가 작아진 feature map을 원래 크기로 돌리는 convolution 연산. **값을 복원하는 것이 아니라 size를 복원한다.**
         - filter size - 1크기의 zero padding을 붙인다. 설정한 **stride 만큼 feature map의 원소들을 떨어 트리고, 지정한 padding 만큼 zero padding을 제거한다.**
         - <https://github.com/aqeelanwar/conv_layers_animation#transposed-convolution>
@@ -96,19 +93,19 @@ use_math: true
 
 # YOLOv8을 사용한 Segmentation 예제
 ## 모델 로딩
-```python
-from ultralytics import YOLO
-import numpy as np
-import cv2
+    ```python
+    from ultralytics import YOLO
+    import numpy as np
+    import cv2
 
-MODEL_PATH = r'models/yolov8n-seg.pt' # 모델 가져오기
-FILES_PATH = r'test_image_seg/beatles.jpg' # 원하는 사진 위치
+    MODEL_PATH = r'models/yolov8n-seg.pt' # 모델 가져오기
+    FILES_PATH = r'test_image_seg/beatles.jpg' # 원하는 사진 위치
 
-# 모델 생성
-model = YOLO(MODEL_PATH)
+    # 모델 생성
+    model = YOLO(MODEL_PATH)
 
-result_list = model(FILES_PATH, save=True, save_txt=True, line_thickness=1)
-```
+    result_list = model(FILES_PATH, save=True, save_txt=True, line_thickness=1)
+    ```
 
 ### 결과
 ![Alt text](../../../assets/img/playdata/08_computer_vision/06-06.png)
