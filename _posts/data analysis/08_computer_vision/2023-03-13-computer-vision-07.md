@@ -14,9 +14,9 @@ use_math: true
 ### 분류
 - Single person, Multi person
     - 영상내의 한명의 자세만 추정하는지 여러명의 자세를 추정하는지에 따른 구분
-- [Direct Regression, Heatmap based](#Direct-Regression,-Heatmap-based)
+- Direct Regression, Heatmap based
     - 관절 keypoint 추정하는 방식에 따른 분류
-- [Top-Down, Bottom-up](#Top-Down,-Bottom-up-방식)
+- Top-Down, Bottom-up
     - 모델이 image를 처리하는 순서/방식에 따른 분류
 
 ### Direct Regression, Heatmap based
