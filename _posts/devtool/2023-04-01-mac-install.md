@@ -5,7 +5,7 @@ categories: ['개발 툴', 'Mac']
 tags: [mac, jupyter, eclipse, ]     # TAG names should always be lowercase
 ---
 
-## &#10052; Jupyter notebook
+## <font color ="#00FFFF">&#10052;</font> Jupyter notebook
 1. <https://github.com/conda-forge/miniforge>에서 `arm64 (Apple Silicon)` 설치
 2. 터미널 실행후 아래 코드 입력
     ```null
@@ -38,7 +38,7 @@ tags: [mac, jupyter, eclipse, ]     # TAG names should always be lowercase
 
 > - 참조: <https://velog.io/@pcj1541/1.-Macbook-M1-Tensorflow-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0for-jupyter-notebook>
 
-## &#10052; Eclipse 설치
+## <font color ="#00FFFF">&#10052;</font> Eclipse 설치
 ### JDK
 - <https://www.oracle.com/java/technologies/downloads/#jdk17-mac>에 접속
 - **Java 17**`Arm 64 DMG Installer`를 설치
@@ -49,7 +49,7 @@ tags: [mac, jupyter, eclipse, ]     # TAG names should always be lowercase
 - <https://www.eclipse.org>에 접속
 - `Download x86_64`를 설치
 
-## &#10052; MySQL
+## <font color ="#00FFFF">&#10052;</font> MySQL
 1. MySQL 커뮤니티 버전 설치
 	- <https://dev.mysql.com/downloads/mysql/>
 	- `macOS xx (ARM, 64-bit), DMG Archive`
