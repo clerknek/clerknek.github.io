@@ -51,22 +51,30 @@ h2 {
 
   font-size: 1.5rem;
 }
+body {
+  counter-reset: section;
+}
+
+h2:before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
 
 h3 {
   @extend %heading;
   @extend %section;
   @extend %anchor;
 
-  font-size: 5rem;
+  font-size: 1.2rem;
 
   color: #747BED;
 
 }
 
 h3::before {
-  content: "\1007";
+  content: "\2756";
   margin-right: 0.5rem;
-  background-color: #B7B9E9;
+  color: #B7B9E9;
 }
 
 h4 {
@@ -75,6 +83,12 @@ h4 {
   @extend %anchor;
 
   font-size: 1.15rem;
+}
+
+h4::before {
+  content: "\2B28";
+  margin-left: 2rem;
+  color: #B8B0FE;
 }
 
 h5 {

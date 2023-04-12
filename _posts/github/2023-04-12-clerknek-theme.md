@@ -20,3 +20,5 @@ tags: [github, blog]
   - 내용
     - 내용
 ```
+
+&rarr; `_sass > addon > common.scss` 에서 `Typography` 부분 수정
