@@ -51,14 +51,6 @@ h2 {
 
   font-size: 1.5rem;
 }
-body {
-  counter-reset: section;
-}
-
-h2:before {
-  counter-increment: section;
-  content: counter(section) ". ";
-}
 
 h3 {
   @extend %heading;
@@ -86,8 +78,8 @@ h4 {
 }
 
 h4::before {
-  content: "\2B28";
-  margin-left: 2rem;
+  content: "  \2B28";
+  margin-right: 0.5rem;
   color: #B8B0FE;
 }
 
