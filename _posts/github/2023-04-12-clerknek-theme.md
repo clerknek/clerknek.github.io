@@ -7,7 +7,16 @@ tags: [github, blog]
 
 ## 1. 제목
 ### <font color ="#B7B9E9">&#10070;</font> <font color = "#747BED">제목</font>
-#### <font color = "#B8B0FE">&nbsp;&nbsp;&#11048;</font> 제목
+#### <font color = "#B8B0FE">&nbsp;&nbsp;&nbsp;&#11048;</font> 제목
 - 내용
   - 내용
     - 내용
+
+```
+## 1. 제목
+### <font color ="#B7B9E9">&#10070;</font> <font color = "#747BED">제목</font>
+#### <font color = "#B8B0FE">&nbsp;&nbsp;&nbsp;&#11048;</font> 제목
+- 내용
+  - 내용
+    - 내용
+```

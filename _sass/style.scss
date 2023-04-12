@@ -1,0 +1,15 @@
+// _sass/style.scss
+
+// Maplestory OTF 폰트
+@font-face {
+    font-family: 'MaplestoryOTFLight';
+    src: url('assets/fonts/Maplestory OTF Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  // 블로그 포스트 본문 글꼴 변경
+  .post-content {
+    font-family: 'MaplestoryOTFLight', sans-serif;
+  }
+  
